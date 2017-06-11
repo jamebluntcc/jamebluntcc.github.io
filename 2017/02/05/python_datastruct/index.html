@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      python 数据结构 | chencheng&#39;s blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="chencheng">
+    
+    
+
+    <meta name="description" content="python的基本数据结构 对于任何一门计算机语言第一步都是要熟悉它的数据结构.  pyhton中的数据结构：  tutple list dict  12345# moduleimport mathmath.floor(x)from math import floorfloor(x)      #使用from导入math module后可以直接写出函数，不必写出前缀 repr 函数会创建一个字符串">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python 数据结构 | chencheng&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/2017/02/05/python_datastruct/index.html">
+<meta property="og:site_name" content="chencheng&#39;s blog">
+<meta property="og:description" content="python的基本数据结构 对于任何一门计算机语言第一步都是要熟悉它的数据结构.  pyhton中的数据结构：  tutple list dict  12345# moduleimport mathmath.floor(x)from math import floorfloor(x)      #使用from导入math module后可以直接写出函数，不必写出前缀 repr 函数会创建一个字符串">
+<meta property="og:updated_time" content="2017-06-10T10:03:57.935Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python 数据结构 | chencheng&#39;s blog">
+<meta name="twitter:description" content="python的基本数据结构 对于任何一门计算机语言第一步都是要熟悉它的数据结构.  pyhton中的数据结构：  tutple list dict  12345# moduleimport mathmath.floor(x)from math import floorfloor(x)      #使用from导入math module后可以直接写出函数，不必写出前缀 repr 函数会创建一个字符串">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">chencheng&#39;s blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          Technology only for better life
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/jamebluntcc" title="Jamebluntcc on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">python 数据结构</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-02-05" class="post-meta__date date">2017-02-05</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/Programm/">Programm</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/python/">python</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="python的基本数据结构"><a href="#python的基本数据结构" class="headerlink" title="python的基本数据结构"></a>python的基本数据结构</h2><blockquote>
+<p>对于任何一门计算机语言第一步都是要熟悉它的数据结构.</p>
+</blockquote>
+<p>pyhton中的数据结构：</p>
+<ul>
+<li>tutple</li>
+<li>list</li>
+<li>dict</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># module</span></div><div class="line"><span class="keyword">import</span> math</div><div class="line">math.floor(x)</div><div class="line"><span class="keyword">from</span> math <span class="keyword">import</span> floor</div><div class="line">floor(x)      <span class="comment">#使用from导入math module后可以直接写出函数，不必写出前缀</span></div></pre></td></tr></table></figure>
+<p>repr 函数会创建一个字符串，以合法的python表达式的形式去表达值 str repr 反引号都是将python值转为字符串的三种方法。其中str最易于阅读。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># repr function</span></div><div class="line">temp = <span class="number">24</span></div><div class="line"><span class="keyword">print</span> <span class="string">"now I'm"</span> + temp <span class="comment">#error</span></div><div class="line"><span class="keyword">print</span> <span class="string">"now I'm"</span> + `temp` <span class="comment">#ok</span></div><div class="line"><span class="keyword">print</span> <span class="string">"now I'm"</span> + str(temp) <span class="comment">#ok</span></div><div class="line"><span class="keyword">print</span> <span class="string">"now I'm"</span> + repr(temp) <span class="comment">#ok</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>在python中，方法是指一种与特有对象相关的函数</p>
+</blockquote>
+<h2 id="list的方法："><a href="#list的方法：" class="headerlink" title="list的方法："></a>list的方法：</h2><ul>
+<li>append 修改list不返回值</li>
+<li>extend 修改list不返回值</li>
+<li>count 不修改list返回值</li>
+<li>reverse 修改list不返回值</li>
+<li>pop 修改list返回pop出的元素</li>
+<li>index 返回index的值</li>
+<li>remove 按照list的值修改list</li>
+<li>insert 按照list的位置插入值</li>
+<li>sort 修改list不返回值</li>
+</ul>
+<p>tips:</p>
+<ol>
+<li>python中复制list不是简单的 x = y,而是y = x[:] y = x 仅仅是将x指向y;</li>
+<li><p>取得sort后的list一般可以用y = sorted(x)获得一个sort后的结果;</p>
+<h4 id="高级排序"><a href="#高级排序" class="headerlink" title="高级排序"></a>高级排序</h4><p>sort方法总是对按照python默认的排序方法进行排序，如果我们需要按照自己的排序方法进行排序需要使用compare(x,y)的形式来自定义比较函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">compare</span><span class="params">(x,y)</span>:</span></div><div class="line"><span class="keyword">if</span> x &lt; y:</div><div class="line"><span class="keyword">return</span> <span class="number">-1</span></div><div class="line"><span class="keyword">elif</span> x &gt; y:</div><div class="line"><span class="keyword">return</span> <span class="number">1</span></div><div class="line"><span class="keyword">else</span>:</div><div class="line"><span class="keyword">return</span> <span class="number">0</span></div><div class="line">x = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">5</span>]</div><div class="line">x.sort(compare)</div><div class="line"><span class="keyword">print</span> x</div></pre></td></tr></table></figure>
+<p>sort还有两个可选择参数：key reverse： key接收一个函数，按照key产生的键来进行排序； reverse 在布尔值：True 或者 False;</p>
+</li>
+</ol>
+<h2 id="string"><a href="#string" class="headerlink" title="string"></a>string</h2><h3 id="字段宽度与精度"><a href="#字段宽度与精度" class="headerlink" title="字段宽度与精度"></a>字段宽度与精度</h3><p><code>%10.3f</code>表示按照右对齐10个字段，小数点保留3位，如果是 <code>%-10.3f</code>负号表示左对齐。<code>%+10.3f</code>表示无论数字是正还是负都要显示符号。</p>
+<h3 id="字符串的方法："><a href="#字符串的方法：" class="headerlink" title="字符串的方法："></a>字符串的方法：</h3><p><code>find:</code>在一个字符串中找到一个字串，返回字串的起始下标，这个方法还可以接收起始和终止的下标：<code>str.find(&#39;funny&#39;,1,10)</code>;<br><br><code>join</code>:是<code>split</code>的逆向操作，将一个list对象进行连接； <code>&#39;,&#39;.join([1,2,3])</code>;<br><br><code>replace</code>:字符串替换方法<code>&#39;I\&#39;m jamebluntcc&#39;.replace(&#39;cc&#39;,&#39;xy&#39;)</code><br><br><code>split</code>:<code>join</code>的逆向操作,用于将字符串进行分割返回一个list.<code>&#39;usr/bin/env/&#39;.split(&#39;/&#39;)</code></p>
+<h2 id="dict"><a href="#dict" class="headerlink" title="dict"></a>dict</h2><p>通过<code>dict</code>将其它数据关系mapping为dict：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">items = [(<span class="string">'name'</span>,<span class="string">'zaker'</span>),(<span class="string">'age'</span>,<span class="number">34</span>)]</div><div class="line">d = dict(items)</div><div class="line">dict(<span class="string">'name'</span>=<span class="string">'zaker'</span>,<span class="string">'age'</span>=<span class="number">34</span>)</div></pre></td></tr></table></figure>
+<p>tips: 字典的格式化字符串:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">phonebook = &#123;<span class="string">'Beth'</span>:<span class="string">'9101'</span>,<span class="string">'Cecil'</span>:<span class="string">'3249'</span>&#125;</div><div class="line"><span class="string">"Cecil's phone is %(Cecil)s"</span> %phonebook</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"Cecil's phone is 3249"</span></div></pre></td></tr></table></figure>
+<p>当以这种方式(%后直接写出键值)使用字典时仅仅需要将字典的键值写出，然后就可以在字典里写出value.</p>
+<h3 id="字典的方法"><a href="#字典的方法" class="headerlink" title="字典的方法"></a>字典的方法</h3><ul>
+<li>clear 清空dict <code>d.clear() d=={}</code></li>
+<li><p>copy copy返回一个复制的dict，但是需要注意的是这个方法得到的dict替换值的时候原来的dict不会受到影响，如果要修改一个值时，它会原地修改，原始的dict也会变。所有为了避免这个问题要使用深度复制(deepcopy)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> copy <span class="keyword">import</span> deepcopy</div><div class="line">d = &#123;&#125;</div><div class="line">d[<span class="string">'name'</span>] = [<span class="string">'A'</span>,<span class="string">'B'</span>]</div><div class="line">c = d.copy()</div><div class="line">dc = deepcopy(d)</div><div class="line">d[<span class="string">'name'</span>].append(<span class="string">'C'</span>)</div><div class="line">c</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>&#123;<span class="string">'name'</span>:[<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>]&#125;</div><div class="line">dc</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>&#123;<span class="string">'name'</span>:[<span class="string">'A'</span>,<span class="string">'B'</span>]&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>fromkeys formkeys使用已经给定的键值创建一个新dict默认所有的值都是<code>None</code>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dict.fromkeys([<span class="string">'name'</span>,<span class="string">'age'</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>&#123;<span class="string">'name'</span>:<span class="keyword">None</span>,<span class="string">'age'</span>:<span class="keyword">None</span>&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>get 提供一个更加友好的方式去访问键值所对应的值<code>d.get(&#39;name&#39;)</code>如果不存在这个键值返回<code>None</code></p>
+</li>
+</ul>
+<p>tips: dict：k in v 指判断键值是否在dict中 list：k in v 指value是否在list中</p>
+<ul>
+<li>items 将dict返回为list，list中每一项为(key,value) <code>iteritems</code>返回迭代器</li>
+<li>keys 以list的形式返回dict的全部key</li>
+<li>values 以list的形式返回dict的全部value</li>
+<li>pop pop方法获得对应键的值，然后将键-值移除</li>
+<li>update 利用一个dict更新另一个dict</li>
+</ul>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2015-2017. | power by <a href="https://hexo.io/">Hexo</a> | themes <a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

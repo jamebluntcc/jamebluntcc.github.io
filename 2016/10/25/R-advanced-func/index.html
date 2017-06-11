@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      R的进阶-R的函数化编程 | chencheng&#39;s blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="chencheng">
+    
+    
+
+    <meta name="description" content="123456789#----Function components-----#body#formals#envirnmentf &amp;lt;- function(x) x^2fformals(f)body(f)environment(f) but there is one exception:Primitive functions1234567sumformals(sum)#&amp;gt; NULLbody">
+<meta name="keywords" content="R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R的进阶-R的函数化编程 | chencheng&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/2016/10/25/R-advanced-func/index.html">
+<meta property="og:site_name" content="chencheng&#39;s blog">
+<meta property="og:description" content="123456789#----Function components-----#body#formals#envirnmentf &amp;lt;- function(x) x^2fformals(f)body(f)environment(f) but there is one exception:Primitive functions1234567sumformals(sum)#&amp;gt; NULLbody">
+<meta property="og:updated_time" content="2017-06-10T10:07:28.236Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="R的进阶-R的函数化编程 | chencheng&#39;s blog">
+<meta name="twitter:description" content="123456789#----Function components-----#body#formals#envirnmentf &amp;lt;- function(x) x^2fformals(f)body(f)environment(f) but there is one exception:Primitive functions1234567sumformals(sum)#&amp;gt; NULLbody">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">chencheng&#39;s blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          Technology only for better life
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/jamebluntcc" title="Jamebluntcc on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">R的进阶-R的函数化编程</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-10-25" class="post-meta__date date">2016-10-25</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/Programming/">Programming</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/R/">R</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#----Function components-----</span></div><div class="line"><span class="comment">#body</span></div><div class="line"><span class="comment">#formals</span></div><div class="line"><span class="comment">#envirnment</span></div><div class="line">f &lt;- <span class="keyword">function</span>(x) x^<span class="number">2</span></div><div class="line">f</div><div class="line">formals(f)</div><div class="line">body(f)</div><div class="line">environment(f)</div></pre></td></tr></table></figure>
+<p>but there is one exception:Primitive functions<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sum</div><div class="line">formals(sum)</div><div class="line"><span class="comment">#&gt; NULL</span></div><div class="line">body(sum)</div><div class="line"><span class="comment">#&gt; NULL</span></div><div class="line">environment(sum)</div><div class="line"><span class="comment">#&gt; NULL</span></div></pre></td></tr></table></figure></p>
+<p>关于R函数的作用域<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">x &lt;- <span class="number">2</span></div><div class="line">g &lt;- <span class="keyword">function</span>()&#123;</div><div class="line">  y &lt;- <span class="number">1</span></div><div class="line">  c(x,y)</div><div class="line">&#125;</div><div class="line">g()</div><div class="line"><span class="comment">#&gt; 2 1</span></div><div class="line">rm(x,g)</div><div class="line">x &lt;- <span class="number">1</span></div><div class="line">h &lt;- <span class="keyword">function</span>()&#123;</div><div class="line">  y &lt;- <span class="number">2</span></div><div class="line">  i &lt;- <span class="keyword">function</span>()&#123;</div><div class="line">    z &lt;- <span class="number">3</span></div><div class="line">    c(x,y,z)</div><div class="line">  &#125;</div><div class="line">  i()</div><div class="line">&#125;</div><div class="line">h()</div><div class="line"><span class="comment">#&gt; 1 2 3</span></div><div class="line">rm(x,h)</div><div class="line">j &lt;- <span class="keyword">function</span>(x)&#123;</div><div class="line">  y &lt;- <span class="number">2</span></div><div class="line">  <span class="keyword">function</span>()&#123; <span class="comment">#返回函数</span></div><div class="line">    c(x,y)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">k &lt;- j(<span class="number">1</span>)</div><div class="line">k()</div><div class="line"><span class="comment">#&gt; 1 2</span></div><div class="line">rm(j,k)</div><div class="line">j &lt;- <span class="keyword">function</span>() &#123;</div><div class="line">  <span class="keyword">if</span> (!exists(<span class="string">"a"</span>)) &#123;</div><div class="line">    a &lt;- <span class="number">1</span></div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    a &lt;- a + <span class="number">1</span></div><div class="line">  &#125;</div><div class="line">  print(a)</div><div class="line">&#125;</div><div class="line">j()</div><div class="line">rm(j)</div></pre></td></tr></table></figure></p>
+<p>可以看出函数外部的变量可以引入到函数内进行运算但是函数内产生的中间变量无法被外部引用<br>在R里面:Every operation is a function call,Everything that exists is an object,Everything that happens is a function call<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">`+`(<span class="number">1</span>,<span class="number">2</span>)</div><div class="line">`[`(c(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>),<span class="number">2</span>)</div><div class="line"><span class="comment">#&gt; 3</span></div><div class="line">add &lt;- <span class="keyword">function</span>(x,y) x + y</div><div class="line">sapply(<span class="number">1</span>:<span class="number">10</span>,add,<span class="number">2</span>) <span class="comment">#需要第二个参数的时候跟在函数后面</span></div><div class="line"><span class="comment">#&gt; [1]  3  4  5  6  7  8  9 10 11 12</span></div><div class="line">sapply(<span class="number">1</span>:<span class="number">10</span>,`+`,<span class="number">2</span>)</div><div class="line"><span class="comment">#&gt; [1]  3  4  5  6  7  8  9 10 11 12</span></div><div class="line">sapply(<span class="number">1</span>:<span class="number">10</span>,<span class="string">"+"</span>,<span class="number">2</span>) <span class="comment"># sapply can be given the name of a function instead of the function itself</span></div><div class="line"><span class="comment">#&gt; [1]  3  4  5  6  7  8  9 10 11 12</span></div><div class="line">x &lt;- list(<span class="number">1</span>:<span class="number">3</span>,<span class="number">4</span>:<span class="number">9</span>,<span class="number">10</span>:<span class="number">12</span>)</div><div class="line">sapply(x,<span class="string">"["</span>,<span class="number">2</span>)</div><div class="line"><span class="comment">#&gt; [1]  2  5 11</span></div><div class="line"><span class="comment">#Calling a function given a list of arguments</span></div><div class="line">argvs &lt;- list(<span class="number">1</span>:<span class="number">10</span>)</div><div class="line">do.call(mean,argvs)</div><div class="line">add &lt;- <span class="keyword">function</span>(x)&#123;</div><div class="line">  <span class="keyword">function</span>(y) x + y</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>利用list的类型可以是任何类型，储存函数<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">adders &lt;- lapply(<span class="number">1</span>:<span class="number">10</span>,add)</div><div class="line">adders[[<span class="number">1</span>]](<span class="number">10</span>)</div><div class="line"><span class="comment">#&gt; [1] 11</span></div><div class="line">adders[[<span class="number">10</span>]](<span class="number">10</span>)</div><div class="line"><span class="comment">#&gt; [1] 20</span></div></pre></td></tr></table></figure></p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2015-2017. | power by <a href="https://hexo.io/">Hexo</a> | themes <a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

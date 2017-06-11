@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Jamebluntcc">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Jamebluntcc&#39;s Blog"/>
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="Jamebluntcc&#39;s Blog"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://yoursite.comundefined"/>
+  
+    <link rel="alternate" href="/atom.xml" title="Jamebluntcc&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Jamebluntcc's Blog</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">无标题文章</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/levblanc">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:levblanc@163.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Jamebluntcc</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2016-10-24</span>
+            <span class="time">22:48:40</span>
+          </span>
+          
+        </div>
+        <!-- Tags -->
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>title:Git Learn<br>date:2016-10-24</p>
+<h2 id="categories-Tools-Git"><a href="#categories-Tools-Git" class="headerlink" title="categories:[Tools,Git]"></a>categories:[Tools,Git]</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init #初始化一个版本库(repository)</div></pre></td></tr></table></figure>
+<p>git init将当前操作目录变成Git可以管理的一个仓库。<br>判断一个目录是不是一个管理仓库，在当前仓库下是否存在一个.git/的文件夹，linux下使用ls -ah查看。<br>添加文件到仓库：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git add your file  #每次add多个文件</div><div class="line">git commit -m  &apos;说明&apos;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>查看工作区的状态:git status(得出文件是否被修过)</li>
+<li>查看具体修改:git diff</li>
+<li>git log 显示从最近到最远的提交日志</li>
+<li>git reset –hard HEAD^ 表示回溯到上一个commit版本<ul>
+<li>HEAD表示当前版本 HEAD^ 表示上一个版本，同理HEAD^^</li>
+</ul>
+</li>
+<li><p>git relog查看命令历史，以便确定回到未来哪个版本</p>
+</li>
+<li><p>第一步是用git add把文件添加进去，实际上就是把文件修改添加到暂存区；</p>
+</li>
+<li>第二步是用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支；</li>
+<li>当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout – file；</li>
+<li>当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。<h3 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote add origin https://github.com/jamebluntcc/your_files.git <span class="comment">#origin表示远程仓库</span></div><div class="line">git push -u origin master <span class="comment">#第一次连接远程仓库会用到-u参数，使得本地master与远程的master关联起来，</span></div><div class="line">以后可以简化直接提交完后：git push origin master</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="管理分支"><a href="#管理分支" class="headerlink" title="管理分支"></a>管理分支</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git branch <span class="comment">#查看分支</span></div><div class="line">git checkout branch <span class="comment">#切换分支</span></div><div class="line">git branch <span class="string">'&lt;name&gt;'</span> <span class="comment">#新建分支</span></div><div class="line">git checkout -b <span class="string">'&lt;name&gt;'</span> <span class="comment">#新建并且切换到分支</span></div><div class="line">git branch <span class="_">-d</span> <span class="string">'&lt;name&gt;'</span> <span class="comment">#删除分支</span></div><div class="line">git merge <span class="string">'&lt;name&gt;'</span> <span class="comment">#合并分支到当前分支</span></div></pre></td></tr></table></figure>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+

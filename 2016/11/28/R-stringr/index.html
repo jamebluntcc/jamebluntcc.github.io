@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      R package stringr | chencheng&#39;s blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="chencheng">
+    
+    
+
+    <meta name="description" content="stringr是R中一个专门用于处理字符串的包，可以通过以下命令来进行安装：1install.package(&quot;tidyverse&quot;) 在base包或者是stringi包与其等价的函数：在stringr包里所有的函数都是统一的，都以’str_’开头，然后第一个参数都是string 第二个参数是pattern。  str_c() 对应 paste() str_length()对应nchar() st">
+<meta name="keywords" content="R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R package stringr | chencheng&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/2016/11/28/R-stringr/index.html">
+<meta property="og:site_name" content="chencheng&#39;s blog">
+<meta property="og:description" content="stringr是R中一个专门用于处理字符串的包，可以通过以下命令来进行安装：1install.package(&quot;tidyverse&quot;) 在base包或者是stringi包与其等价的函数：在stringr包里所有的函数都是统一的，都以’str_’开头，然后第一个参数都是string 第二个参数是pattern。  str_c() 对应 paste() str_length()对应nchar() st">
+<meta property="og:updated_time" content="2017-06-11T15:17:14.029Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="R package stringr | chencheng&#39;s blog">
+<meta name="twitter:description" content="stringr是R中一个专门用于处理字符串的包，可以通过以下命令来进行安装：1install.package(&quot;tidyverse&quot;) 在base包或者是stringi包与其等价的函数：在stringr包里所有的函数都是统一的，都以’str_’开头，然后第一个参数都是string 第二个参数是pattern。  str_c() 对应 paste() str_length()对应nchar() st">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">chencheng&#39;s blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          Technology only for better life
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/jamebluntcc" title="Jamebluntcc on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">R package stringr</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-11-28" class="post-meta__date date">2016-11-28</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/Programming/">Programming</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/R/">R</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p><strong>stringr</strong>是R中一个专门用于处理字符串的包，可以通过以下命令来进行安装：<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">install.package(<span class="string">"tidyverse"</span>)</div></pre></td></tr></table></figure></p>
+<p>在base包或者是stringi包与其等价的函数：<br>在stringr包里所有的函数都是统一的，都以’str_’开头，<br>然后第一个参数都是string 第二个参数是pattern。</p>
+<ul>
+<li>str_c() 对应 paste()</li>
+<li>str_length()对应nchar()</li>
+<li>str_sub()对应substr()</li>
+<li>str_split()对应strsplit()</li>
+</ul>
+<p>str_dup()产生重复的字符串，str_trim()去掉端点的空白</p>
+<p>在这里举一个例子：</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">pattern matching</div><div class="line">strings &lt;- c(</div><div class="line">  <span class="string">"apple"</span>,</div><div class="line">  <span class="string">"219 733 8965"</span>,</div><div class="line">  <span class="string">"329-293-8753"</span>,</div><div class="line">  <span class="string">"Work: 579-499-7527; Home: 543.355.3679"</span></div><div class="line">)</div><div class="line">phone &lt;- <span class="string">"([2-9][0-9]&#123;2&#125;)[- .]([0-9]&#123;3&#125;)[- .]([0-9]&#123;4&#125;)"</span></div></pre></td></tr></table></figure>
+<p><strong>str_detect()</strong>匹配并返回一个逻辑向量,str_subset()返回匹配到的字段。<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">str_detect(strings, phone)</div><div class="line"><span class="comment">#&gt; [1] FALSE  TRUE  TRUE  TRUE</span></div><div class="line">str_subset(strings, phone)</div><div class="line"><span class="comment">#&gt; [1] "219 733 8965"                          </span></div><div class="line"><span class="comment">#&gt; [2] "329-293-8753"                          </span></div><div class="line"><span class="comment">#&gt; [3] "Work: 579-499-7527; Home: 543.355.3679"</span></div></pre></td></tr></table></figure></p>
+<p>str_locate()和str_locate_all()返回匹配到的起始和结束。<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#locate the first pos of a pattern and return a numeric mat start and end</span></div><div class="line">str_locate(strings,phone)</div><div class="line"><span class="comment">#&gt;      start end</span></div><div class="line"><span class="comment">#&gt; [1,]    NA  NA</span></div><div class="line"><span class="comment">#&gt; [2,]     1  12</span></div><div class="line"><span class="comment">#&gt; [3,]     1  12</span></div><div class="line"><span class="comment">#&gt; [4,]     7  18</span></div><div class="line"><span class="comment">#locate all matches return a list of matrices</span></div><div class="line">str_locate_all(strings, phone)</div><div class="line"><span class="comment">#&gt; [[1]]</span></div><div class="line"><span class="comment">#&gt;      start end</span></div><div class="line"><span class="comment">#&gt;</span></div><div class="line"><span class="comment">#&gt; [[2]]</span></div><div class="line"><span class="comment">#&gt;      start end</span></div><div class="line"><span class="comment">#&gt; [1,]     1  12</span></div><div class="line"><span class="comment">#&gt;</span></div><div class="line"><span class="comment">#&gt; [[3]]</span></div><div class="line"><span class="comment">#&gt;      start end</span></div><div class="line"><span class="comment">#&gt; [1,]     1  12</span></div><div class="line"><span class="comment">#&gt;</span></div><div class="line"><span class="comment">#&gt; [[4]]</span></div><div class="line"><span class="comment">#&gt;      start end</span></div><div class="line"><span class="comment">#&gt; [1,]     7  18</span></div><div class="line"><span class="comment">#&gt; [2,]    27  38</span></div></pre></td></tr></table></figure></p>
+<p>而对于str_extract()和str_extract_all()返回匹配到的结果。<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#extracted text from the first match</span></div><div class="line">str_extract(strings, phone)</div><div class="line"><span class="comment">#&gt; [1] NA             "219 733 8965" "329-293-8753" "579-499-7527"</span></div><div class="line">str_extract_all(strings, phone)</div><div class="line"><span class="comment">#&gt; [[1]]</span></div><div class="line"><span class="comment">#&gt; character(0)</span></div><div class="line"><span class="comment">#&gt;</span></div><div class="line"><span class="comment">#&gt; [[2]]</span></div><div class="line"><span class="comment">#&gt; [1] "219 733 8965"</span></div><div class="line"><span class="comment">#&gt;</span></div><div class="line"><span class="comment">#&gt; [[3]]</span></div><div class="line"><span class="comment">#&gt; [1] "329-293-8753"</span></div><div class="line"><span class="comment">#&gt;</span></div><div class="line"><span class="comment">#&gt; [[4]]</span></div><div class="line"><span class="comment">#&gt; [1] "579-499-7527" "543.355.3679"</span></div><div class="line">str_extract_all(strings, phone, simplify = <span class="literal">TRUE</span>)</div><div class="line"><span class="comment">#&gt;      [,1]           [,2]          </span></div><div class="line"><span class="comment">#&gt; [1,] ""             ""            </span></div><div class="line"><span class="comment">#&gt; [2,] "219 733 8965" ""            </span></div><div class="line"><span class="comment">#&gt; [3,] "329-293-8753" ""            </span></div><div class="line"><span class="comment">#&gt; [4,] "579-499-7527" "543.355.3679"</span></div></pre></td></tr></table></figure></p>
+<p>str_split()对应strsplit()，默认返回是list。设置参数simplify = T返回一个矩阵:<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">fruits &lt;- c(</div><div class="line">  <span class="string">"apples and oranges and pears and bananas"</span>,</div><div class="line">  <span class="string">"pineapples and mangos and guavas"</span></div><div class="line">)</div><div class="line"></div><div class="line">str_split(fruits, <span class="string">" and "</span>) %&gt;% unlist()</div><div class="line"><span class="comment">#&gt;[1] "apples"     "oranges"    "pears"      "bananas"    "pineapples" "mangos"     "guavas"    </span></div><div class="line">str_split(fruits, <span class="string">" and "</span>, simplify = <span class="literal">TRUE</span>)</div><div class="line">str_split(fruits, <span class="string">" and "</span>, simplify = <span class="literal">TRUE</span>)</div><div class="line">     [,<span class="number">1</span>]         [,<span class="number">2</span>]      [,<span class="number">3</span>]     [,<span class="number">4</span>]     </div><div class="line">[<span class="number">1</span>,] <span class="string">"apples"</span>     <span class="string">"oranges"</span> <span class="string">"pears"</span>  <span class="string">"bananas"</span></div><div class="line">[<span class="number">2</span>,] <span class="string">"pineapples"</span> <span class="string">"mangos"</span>  <span class="string">"guavas"</span> <span class="string">""</span></div></pre></td></tr></table></figure></p>
+<p>最后，得出一个大概的结论：<strong>stringr</strong>包将常规在R中处理字符串的函数统一起来，并且基本统一了函数的输入：第一个参数是<strong>string</strong>，第二个参数是<strong>pattern</strong>。减少了base包和stringi包中其它操作字符串函数的参数数量，极大的降低了学习成本。可以在平时的学习和工作中习惯使用<strong>stringr</strong>包来处理字符串。</p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2015-2017. | power by <a href="https://hexo.io/">Hexo</a> | themes <a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

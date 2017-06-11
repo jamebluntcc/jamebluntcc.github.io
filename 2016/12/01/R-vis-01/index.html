@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      R可视化-图片的保存 | chencheng&#39;s blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="chencheng">
+    
+    
+
+    <meta name="description" content="R如何保存高质量图在R中我们经常将R绘制的图保存为png或者pdf的文件，但是默认R保存图片的质量往往不高，有时候还不能正常保存为png文件。首先，R中使用png函数或者pdf函数保存我们作的图。在下面的代码中：12345library(ggplot2)data(&quot;diamonds&quot;)png(filename = &quot;test.png&quot;,width = 800,height = 600,type =">
+<meta name="keywords" content="R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R可视化-图片的保存 | chencheng&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/2016/12/01/R-vis-01/index.html">
+<meta property="og:site_name" content="chencheng&#39;s blog">
+<meta property="og:description" content="R如何保存高质量图在R中我们经常将R绘制的图保存为png或者pdf的文件，但是默认R保存图片的质量往往不高，有时候还不能正常保存为png文件。首先，R中使用png函数或者pdf函数保存我们作的图。在下面的代码中：12345library(ggplot2)data(&quot;diamonds&quot;)png(filename = &quot;test.png&quot;,width = 800,height = 600,type =">
+<meta property="og:updated_time" content="2017-06-11T15:17:43.099Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="R可视化-图片的保存 | chencheng&#39;s blog">
+<meta name="twitter:description" content="R如何保存高质量图在R中我们经常将R绘制的图保存为png或者pdf的文件，但是默认R保存图片的质量往往不高，有时候还不能正常保存为png文件。首先，R中使用png函数或者pdf函数保存我们作的图。在下面的代码中：12345library(ggplot2)data(&quot;diamonds&quot;)png(filename = &quot;test.png&quot;,width = 800,height = 600,type =">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">chencheng&#39;s blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          Technology only for better life
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/jamebluntcc" title="Jamebluntcc on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">R可视化-图片的保存</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-12-01" class="post-meta__date date">2016-12-01</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/visualization/">visualization</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/R/">R</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="R如何保存高质量图"><a href="#R如何保存高质量图" class="headerlink" title="R如何保存高质量图"></a>R如何保存高质量图</h2><p>在R中我们经常将R绘制的图保存为png或者pdf的文件，但是默认R保存图片的质量往往不高，有时候还不能正常保存为png文件。<br>首先，R中使用png函数或者pdf函数保存我们作的图。<br>在下面的代码中：<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">library</span>(ggplot2)</div><div class="line">data(<span class="string">"diamonds"</span>)</div><div class="line">png(filename = <span class="string">"test.png"</span>,width = <span class="number">800</span>,height = <span class="number">600</span>,type = <span class="string">"cairo"</span>)</div><div class="line">ggplot(diamonds,aes(x=carat,y=price,colour=cut))+geom_point()</div><div class="line">dev.off()</div></pre></td></tr></table></figure></p>
+<p>加载ggplot2后，作一个散点图。然后用png保存（png格式默认的尺度单位是px，位深度24），一般而言默认的png保存出来图片质量都不高。所以需要设置res（ppi）一般设置res = 300,在无法保存png的时候，设置参数type = “cairo”<br>而在pdf中，一般就默认width = 8，height = 6<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">library</span>(ggplot2)</div><div class="line">data(<span class="string">"diamonds"</span>)</div><div class="line">png(filename = <span class="string">"test1.png"</span>,width = <span class="number">800</span>,height = <span class="number">600</span>,type = <span class="string">"cairo"</span>,res = <span class="number">300</span>)</div><div class="line">ggplot(diamonds,aes(x=carat,y=price,colour=cut))+geom_point()</div><div class="line">dev.off()</div></pre></td></tr></table></figure></p>
+<p>再次运行上面代码可以看出保存图片的质量好了很多。我们可以改变png默认的尺度单位：<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">library</span>(ggplot2)</div><div class="line">data(<span class="string">"diamonds"</span>)</div><div class="line">png(filename = <span class="string">"test2.png"</span>,width = <span class="number">8</span>,height = <span class="number">6</span>,type = <span class="string">"cairo"</span>,units = <span class="string">"in"</span>,res = <span class="number">300</span>)</div><div class="line">ggplot(diamonds,aes(x=carat,y=price,colour=cut))+geom_point()</div><div class="line">dev.off()</div></pre></td></tr></table></figure></p>
+<p>保存出来的图片可以看到是2400x1800质量很高。</p>
+<h2 id="R的配色方案"><a href="#R的配色方案" class="headerlink" title="R的配色方案"></a>R的配色方案</h2><p>在可视化的过程中，我们总是为图的配色费尽心思。好的配色方案可以让图加分不少。在R中一般采用RColorBrewer包的配色方案<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">library</span>(RColorBrewer)</div><div class="line">display.brewer.all()</div><div class="line">brewer.pal.info</div></pre></td></tr></table></figure></p>
+<p>使用devtools安装另一个很不错的配色方案包：<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">library</span>(devtools)</div><div class="line">install_github(<span class="string">"karthik/wesanderson"</span>)</div><div class="line"><span class="comment"># See all palettes</span></div><div class="line">names(wes_palettes)</div><div class="line"><span class="comment">#&gt;  [1] "GrandBudapest"  "Moonrise1"      "Royal1"         "Moonrise2"     </span></div><div class="line"><span class="comment">#&gt;  [5] "Cavalcanti"     "Royal2"         "GrandBudapest2" "Moonrise3"     </span></div><div class="line"><span class="comment">#&gt;  [9] "Chevalier"      "Zissou"         "FantasticFox"   "Darjeeling"    </span></div><div class="line"><span class="comment">#&gt; [13] "Rushmore"       "BottleRocket"   "Darjeeling2"</span></div></pre></td></tr></table></figure></p>
+<p>和使用RColorBrewer相似wes_palette(“palette_name”)使用调色板。在这个函数中，有name,n,type参数。和brewer.pal()使用相似。<br>在<a href="https://github.com/karthik/wesanderson" target="_blank" rel="external">wesanderson</a>上可以访问他的github查看各个调色板的具体信息。</p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2015-2017. | power by <a href="https://hexo.io/">Hexo</a> | themes <a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
