@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      JupyterNoteBook 初体验 | chencheng&#39;s blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="chencheng">
+    
+    
+
+    <meta name="description" content="JupyterNoteBook 的安装和使用JupyterNoteBook 就是 原来的 Ipython NoteBook,它是基于 Web 可以使用 Ipython 绝大多数功能的记事本应用。多数应用在如下场景:  项目说明文档; PPI 演示，尤其关于数据分析相关的 PPT 演示; 个人技术笔记; 技术博客;  安装1pip install -U ipywidgets &quot;ipython[not">
+<meta name="keywords" content="python JupyterNoteBook">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JupyterNoteBook 初体验 | chencheng&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/2017/09/15/JupyterNoteBook/index.html">
+<meta property="og:site_name" content="chencheng&#39;s blog">
+<meta property="og:description" content="JupyterNoteBook 的安装和使用JupyterNoteBook 就是 原来的 Ipython NoteBook,它是基于 Web 可以使用 Ipython 绝大多数功能的记事本应用。多数应用在如下场景:  项目说明文档; PPI 演示，尤其关于数据分析相关的 PPT 演示; 个人技术笔记; 技术博客;  安装1pip install -U ipywidgets &quot;ipython[not">
+<meta property="og:updated_time" content="2017-09-15T10:28:59.846Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JupyterNoteBook 初体验 | chencheng&#39;s blog">
+<meta name="twitter:description" content="JupyterNoteBook 的安装和使用JupyterNoteBook 就是 原来的 Ipython NoteBook,它是基于 Web 可以使用 Ipython 绝大多数功能的记事本应用。多数应用在如下场景:  项目说明文档; PPI 演示，尤其关于数据分析相关的 PPT 演示; 个人技术笔记; 技术博客;  安装1pip install -U ipywidgets &quot;ipython[not">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">chencheng&#39;s blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          Technology only for better life
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/jamebluntcc" title="Jamebluntcc on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">JupyterNoteBook 初体验</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-09-15" class="post-meta__date date">2017-09-15</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/Programm/">Programm</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/python-JupyterNoteBook/">python JupyterNoteBook</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="JupyterNoteBook-的安装和使用"><a href="#JupyterNoteBook-的安装和使用" class="headerlink" title="JupyterNoteBook 的安装和使用"></a>JupyterNoteBook 的安装和使用</h2><p><a href="http://jupyter.org" target="_blank" rel="external">JupyterNoteBook</a> 就是 原来的 Ipython NoteBook,它是基于 Web 可以使用 <a href="https://ipython.org" target="_blank" rel="external">Ipython</a> 绝大多数功能的记事本应用。多数应用在如下场景:</p>
+<ul>
+<li>项目说明文档;</li>
+<li>PPI 演示，尤其关于数据分析相关的 PPT 演示;</li>
+<li>个人技术笔记;</li>
+<li>技术博客;</li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install -U ipywidgets <span class="string">"ipython[notebook]"</span></div></pre></td></tr></table></figure>
+<p>由于 ipywidgets 是从 Ipython 拆分出来的HTML挂件项目所以需要激活：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jupyter nbextension <span class="built_in">enable</span> --py widgetsnbextension</div></pre></td></tr></table></figure></p>
+<p>进行完这步后就可以启动它:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jupyter notebook --port 5000 --no-browser --ip=<span class="string">"*"</span></div></pre></td></tr></table></figure></p>
+<p>启动 JN 后会默认打开自带的浏览器访问 Web 应用，使用 <code>--no-browser</code> 会禁止打开。然后自己打开 <code>https://localhost:5000</code> 就可以访问 JN。</p>
+<h3 id="NoteBook-的格式转换"><a href="#NoteBook-的格式转换" class="headerlink" title="NoteBook 的格式转换"></a>NoteBook 的格式转换</h3><p>JN 支持下面的文档转换，Nbconvert 提供这样的转换办法。<br>当前支持以下格式:</p>
+<ul>
+<li>HTML</li>
+<li>Latex</li>
+<li>PDF</li>
+<li>Markdown</li>
+</ul>
+<p>如果并没有安装它下面就是安装的代码:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pip install nbconvert</div><div class="line"><span class="comment"># 生成同名的html文件</span></div><div class="line">jupyter nbconvert --to html Untitled.ipynb</div></pre></td></tr></table></figure></p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2015-2017. | power by <a href="https://hexo.io/">Hexo</a> | themes <a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
