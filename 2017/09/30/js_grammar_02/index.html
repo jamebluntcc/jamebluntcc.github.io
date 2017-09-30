@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      javascript 学习笔记(二) | chencheng&#39;s blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="chencheng">
+    
+    
+
+    <meta name="description" content="引用类型引用类型是一种数据结构,用于将数据和功能组织在一起。123456789101112// 使用 new 和 Object 对象创建var Person = new Object();Person.name = &apos;Nicholas&apos;;Person.age = 29;// 对象字面量Person = &amp;#123;  name: &apos;Nicholas&apos;,  age: 29&amp;#125;;// 对象的引">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript 学习笔记(二) | chencheng&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/2017/09/30/js_grammar_02/index.html">
+<meta property="og:site_name" content="chencheng&#39;s blog">
+<meta property="og:description" content="引用类型引用类型是一种数据结构,用于将数据和功能组织在一起。123456789101112// 使用 new 和 Object 对象创建var Person = new Object();Person.name = &apos;Nicholas&apos;;Person.age = 29;// 对象字面量Person = &amp;#123;  name: &apos;Nicholas&apos;,  age: 29&amp;#125;;// 对象的引">
+<meta property="og:updated_time" content="2017-09-30T07:55:44.188Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript 学习笔记(二) | chencheng&#39;s blog">
+<meta name="twitter:description" content="引用类型引用类型是一种数据结构,用于将数据和功能组织在一起。123456789101112// 使用 new 和 Object 对象创建var Person = new Object();Person.name = &apos;Nicholas&apos;;Person.age = 29;// 对象字面量Person = &amp;#123;  name: &apos;Nicholas&apos;,  age: 29&amp;#125;;// 对象的引">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">chencheng&#39;s blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          Technology only for better life
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/jamebluntcc" title="Jamebluntcc on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">javascript 学习笔记(二)</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-09-30" class="post-meta__date date">2017-09-30</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/Programm/">Programm</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/js/">js</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h2><p>引用类型是一种数据结构,用于将数据和功能组织在一起。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 使用 new 和 Object 对象创建</span></div><div class="line"><span class="keyword">var</span> Person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">Person.name = <span class="string">'Nicholas'</span>;</div><div class="line">Person.age = <span class="number">29</span>;</div><div class="line"><span class="comment">// 对象字面量</span></div><div class="line">Person = &#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">'Nicholas'</span>,</div><div class="line">  <span class="attr">age</span>: <span class="number">29</span></div><div class="line">&#125;;</div><div class="line"><span class="comment">// 对象的引用</span></div><div class="line">Person.name <span class="comment">// 'Nicholas'</span></div><div class="line">Person[<span class="string">'name'</span>] <span class="comment">// 'Nicholas'</span></div></pre></td></tr></table></figure></p>
+<h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><p>除开 <code>Object</code> 之外 <code>Array</code> 算是 <code>ECMAScript</code> 最常用的类型。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'green'</span>);</div><div class="line"><span class="keyword">var</span> color = [<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'green'</span>];</div><div class="line">color.length <span class="comment">// 3</span></div></pre></td></tr></table></figure></p>
+<p>关于 Array 的基本方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> colors = [];</div><div class="line">colors.push(<span class="string">'red'</span>, <span class="string">'green'</span>) <span class="comment">// ['red', 'green']</span></div><div class="line">colors.top() <span class="comment">// ['red']</span></div><div class="line">colors.push(<span class="string">'green'</span>, <span class="string">'blue'</span>)</div><div class="line"><span class="comment">// 从数组第一项拿出数据</span></div><div class="line">colors.shift() <span class="comment">// get red colors : ['green', 'blue']</span></div><div class="line"><span class="comment">// 从数组第一项开始添加数据</span></div><div class="line">colors.unshift(<span class="string">'red'</span>) <span class="comment">// ['red', 'green', 'blue']</span></div><div class="line"><span class="comment">// 连接多个数组</span></div><div class="line">colors.concat([<span class="string">'black'</span>, <span class="string">'yellow'</span>]) <span class="comment">// ['red', 'green', 'blue', 'black', 'yellow']</span></div><div class="line"><span class="comment">// 对数组进行分片,并不改变数组本身</span></div><div class="line">colors.slice(<span class="number">1</span>,<span class="number">2</span>) <span class="comment">// ['green']</span></div><div class="line"><span class="comment">// 数组的删除,插入和替换</span></div><div class="line"><span class="comment">// splice 方法第一个参数为 起始项 第二个参数为 删除项 第三个为插入项</span></div><div class="line">colors = [<span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>]</div><div class="line"><span class="comment">// 删除</span></div><div class="line">colors.splice(<span class="number">1</span>,<span class="number">2</span>) <span class="comment">// ['red']</span></div><div class="line"><span class="comment">// 替换</span></div><div class="line">colors.splice(<span class="number">1</span>,<span class="number">2</span>,<span class="string">'yellow'</span>,<span class="string">'black'</span>) <span class="comment">// ['red', 'yellow', 'black']</span></div><div class="line"><span class="comment">// 添加</span></div><div class="line">colors.splice(<span class="number">1</span>,<span class="number">0</span>,<span class="string">'yellow'</span>, <span class="string">'black'</span>) <span class="comment">// ['red', 'yellow', 'black', 'green', 'blue']</span></div></pre></td></tr></table></figure></p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2015-2017. | power by <a href="https://hexo.io/">Hexo</a> | themes <a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
