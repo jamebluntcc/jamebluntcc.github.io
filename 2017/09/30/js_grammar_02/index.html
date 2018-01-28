@@ -7,25 +7,25 @@
     
 
     <title>
-      javascript 学习笔记(二) | chencheng&#39;s blog 
+      javascript 学习笔记(二) | ChenCheng&#39;s Blog 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
-      <meta name="author" content="chencheng">
+      <meta name="author" content="ChenCheng">
     
     
 
     <meta name="description" content="引用类型引用类型是一种数据结构,用于将数据和功能组织在一起。123456789101112// 使用 new 和 Object 对象创建var Person = new Object();Person.name = &apos;Nicholas&apos;;Person.age = 29;// 对象字面量Person = &amp;#123;  name: &apos;Nicholas&apos;,  age: 29&amp;#125;;// 对象的引">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript 学习笔记(二) | chencheng&#39;s blog">
+<meta property="og:title" content="javascript 学习笔记(二) | ChenCheng&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/2017/09/30/js_grammar_02/index.html">
-<meta property="og:site_name" content="chencheng&#39;s blog">
+<meta property="og:site_name" content="ChenCheng&#39;s Blog">
 <meta property="og:description" content="引用类型引用类型是一种数据结构,用于将数据和功能组织在一起。123456789101112// 使用 new 和 Object 对象创建var Person = new Object();Person.name = &apos;Nicholas&apos;;Person.age = 29;// 对象字面量Person = &amp;#123;  name: &apos;Nicholas&apos;,  age: 29&amp;#125;;// 对象的引">
-<meta property="og:updated_time" content="2017-09-30T07:55:44.188Z">
+<meta property="og:updated_time" content="2018-01-19T07:29:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript 学习笔记(二) | chencheng&#39;s blog">
+<meta name="twitter:title" content="javascript 学习笔记(二) | ChenCheng&#39;s Blog">
 <meta name="twitter:description" content="引用类型引用类型是一种数据结构,用于将数据和功能组织在一起。123456789101112// 使用 new 和 Object 对象创建var Person = new Object();Person.name = &apos;Nicholas&apos;;Person.age = 29;// 对象字面量Person = &amp;#123;  name: &apos;Nicholas&apos;,  age: 29&amp;#125;;// 对象的引">
     
     
@@ -58,12 +58,12 @@
 
         
 
-        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">chencheng&#39;s blog</a></h1>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">ChenCheng&#39;s Blog</a></h1>
         <hr class="panel-cover__divider" />
 
         
         <p class="panel-cover__description">
-          Technology only for better life
+          Teachnology only for better life
         </p>
         <hr class="panel-cover__divider panel-cover__divider--secondary" />
         
@@ -76,6 +76,9 @@
               
                 
                 <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
               
                 
                 <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
@@ -140,7 +143,7 @@ classes that you can use:
     
       <!-- Github -->
       <li class="navigation__item">
-        <a href="https://github.com/jamebluntcc" title="Jamebluntcc on GitHub">
+        <a href="https://github.com/jamebluntcc" title="Huno on GitHub">
           <i class='icon icon-social-github'></i>
           <span class="label">GitHub</span>
         </a>
@@ -183,6 +186,7 @@ classes that you can use:
   </div>
 </header>
 
+
     <div class="content-wrapper">
         <div class="content-wrapper__inner entry">
             
@@ -222,9 +226,9 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h2 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h2><p>引用类型是一种数据结构,用于将数据和功能组织在一起。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 使用 new 和 Object 对象创建</span></div><div class="line"><span class="keyword">var</span> Person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">Person.name = <span class="string">'Nicholas'</span>;</div><div class="line">Person.age = <span class="number">29</span>;</div><div class="line"><span class="comment">// 对象字面量</span></div><div class="line">Person = &#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">'Nicholas'</span>,</div><div class="line">  <span class="attr">age</span>: <span class="number">29</span></div><div class="line">&#125;;</div><div class="line"><span class="comment">// 对象的引用</span></div><div class="line">Person.name <span class="comment">// 'Nicholas'</span></div><div class="line">Person[<span class="string">'name'</span>] <span class="comment">// 'Nicholas'</span></div></pre></td></tr></table></figure></p>
-<h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><p>除开 <code>Object</code> 之外 <code>Array</code> 算是 <code>ECMAScript</code> 最常用的类型。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'green'</span>);</div><div class="line"><span class="keyword">var</span> color = [<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'green'</span>];</div><div class="line">color.length <span class="comment">// 3</span></div></pre></td></tr></table></figure></p>
-<p>关于 Array 的基本方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> colors = [];</div><div class="line">colors.push(<span class="string">'red'</span>, <span class="string">'green'</span>) <span class="comment">// ['red', 'green']</span></div><div class="line">colors.top() <span class="comment">// ['red']</span></div><div class="line">colors.push(<span class="string">'green'</span>, <span class="string">'blue'</span>)</div><div class="line"><span class="comment">// 从数组第一项拿出数据</span></div><div class="line">colors.shift() <span class="comment">// get red colors : ['green', 'blue']</span></div><div class="line"><span class="comment">// 从数组第一项开始添加数据</span></div><div class="line">colors.unshift(<span class="string">'red'</span>) <span class="comment">// ['red', 'green', 'blue']</span></div><div class="line"><span class="comment">// 连接多个数组</span></div><div class="line">colors.concat([<span class="string">'black'</span>, <span class="string">'yellow'</span>]) <span class="comment">// ['red', 'green', 'blue', 'black', 'yellow']</span></div><div class="line"><span class="comment">// 对数组进行分片,并不改变数组本身</span></div><div class="line">colors.slice(<span class="number">1</span>,<span class="number">2</span>) <span class="comment">// ['green']</span></div><div class="line"><span class="comment">// 数组的删除,插入和替换</span></div><div class="line"><span class="comment">// splice 方法第一个参数为 起始项 第二个参数为 删除项 第三个为插入项</span></div><div class="line">colors = [<span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>]</div><div class="line"><span class="comment">// 删除</span></div><div class="line">colors.splice(<span class="number">1</span>,<span class="number">2</span>) <span class="comment">// ['red']</span></div><div class="line"><span class="comment">// 替换</span></div><div class="line">colors.splice(<span class="number">1</span>,<span class="number">2</span>,<span class="string">'yellow'</span>,<span class="string">'black'</span>) <span class="comment">// ['red', 'yellow', 'black']</span></div><div class="line"><span class="comment">// 添加</span></div><div class="line">colors.splice(<span class="number">1</span>,<span class="number">0</span>,<span class="string">'yellow'</span>, <span class="string">'black'</span>) <span class="comment">// ['red', 'yellow', 'black', 'green', 'blue']</span></div></pre></td></tr></table></figure></p>
+    <h2 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h2><p>引用类型是一种数据结构,用于将数据和功能组织在一起。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用 new 和 Object 对象创建</span></span><br><span class="line"><span class="keyword">var</span> Person = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">Person.name = <span class="string">'Nicholas'</span>;</span><br><span class="line">Person.age = <span class="number">29</span>;</span><br><span class="line"><span class="comment">// 对象字面量</span></span><br><span class="line">Person = &#123;</span><br><span class="line">  name: <span class="string">'Nicholas'</span>,</span><br><span class="line">  age: <span class="number">29</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 对象的引用</span></span><br><span class="line">Person.name <span class="comment">// 'Nicholas'</span></span><br><span class="line">Person[<span class="string">'name'</span>] <span class="comment">// 'Nicholas'</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><p>除开 <code>Object</code> 之外 <code>Array</code> 算是 <code>ECMAScript</code> 最常用的类型。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> color = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'green'</span>);</span><br><span class="line"><span class="keyword">var</span> color = [<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'green'</span>];</span><br><span class="line">color.length <span class="comment">// 3</span></span><br></pre></td></tr></table></figure></p>
+<p>关于 Array 的基本方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> colors = [];</span><br><span class="line">colors.push(<span class="string">'red'</span>, <span class="string">'green'</span>) <span class="comment">// ['red', 'green']</span></span><br><span class="line">colors.top() <span class="comment">// ['red']</span></span><br><span class="line">colors.push(<span class="string">'green'</span>, <span class="string">'blue'</span>)</span><br><span class="line"><span class="comment">// 从数组第一项拿出数据</span></span><br><span class="line">colors.shift() <span class="comment">// get red colors : ['green', 'blue']</span></span><br><span class="line"><span class="comment">// 从数组第一项开始添加数据</span></span><br><span class="line">colors.unshift(<span class="string">'red'</span>) <span class="comment">// ['red', 'green', 'blue']</span></span><br><span class="line"><span class="comment">// 连接多个数组</span></span><br><span class="line">colors.concat([<span class="string">'black'</span>, <span class="string">'yellow'</span>]) <span class="comment">// ['red', 'green', 'blue', 'black', 'yellow']</span></span><br><span class="line"><span class="comment">// 对数组进行分片,并不改变数组本身</span></span><br><span class="line">colors.slice(<span class="number">1</span>,<span class="number">2</span>) <span class="comment">// ['green']</span></span><br><span class="line"><span class="comment">// 数组的删除,插入和替换</span></span><br><span class="line"><span class="comment">// splice 方法第一个参数为 起始项 第二个参数为 删除项 第三个为插入项</span></span><br><span class="line">colors = [<span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>]</span><br><span class="line"><span class="comment">// 删除</span></span><br><span class="line">colors.splice(<span class="number">1</span>,<span class="number">2</span>) <span class="comment">// ['red']</span></span><br><span class="line"><span class="comment">// 替换</span></span><br><span class="line">colors.splice(<span class="number">1</span>,<span class="number">2</span>,<span class="string">'yellow'</span>,<span class="string">'black'</span>) <span class="comment">// ['red', 'yellow', 'black']</span></span><br><span class="line"><span class="comment">// 添加</span></span><br><span class="line">colors.splice(<span class="number">1</span>,<span class="number">0</span>,<span class="string">'yellow'</span>, <span class="string">'black'</span>) <span class="comment">// ['red', 'yellow', 'black', 'green', 'blue']</span></span><br></pre></td></tr></table></figure></p>
 
   </section>
 
@@ -240,9 +244,10 @@ classes that you can use:
 
             <footer class="footer">
 
-    <span class="footer__copyright">&copy; 2015-2017. | power by <a href="https://hexo.io/">Hexo</a> | themes <a href="https://github.com/someus/huno">Huno</a></span>
+    <span class="footer__copyright">&copy; 2016-2018. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
     
 </footer>
+
         </div>
     </div>
 
@@ -279,10 +284,6 @@ classes that you can use:
 
     
     
-
-    <script src="/js/jquery.githubRepoWidget.min.js"></script>
-
-
     <!--kill ie6 -->
 <!--[if IE 6]>
   <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>

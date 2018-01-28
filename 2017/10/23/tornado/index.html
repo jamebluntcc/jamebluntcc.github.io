@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      初识 tornado | ChenCheng&#39;s Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="ChenCheng">
+    
+    
+
+    <meta name="description" content="tornado很开心能够接触到 tornado，因为一直在做以 flask 为主框架的 web 开发。想要多了解一个新鲜的又具有高性能的 web 框架，我不是很喜欢 django 这种很重的框架。刚好 tornado 介于了 flask 与 django 之间，很适合现在的我。在学习和掌握它的同时我也能和 flask 做对比。 正如它广泛的被人所知的那样，tornado 是一个非阻塞式(async">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识 tornado | ChenCheng&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/2017/10/23/tornado/index.html">
+<meta property="og:site_name" content="ChenCheng&#39;s Blog">
+<meta property="og:description" content="tornado很开心能够接触到 tornado，因为一直在做以 flask 为主框架的 web 开发。想要多了解一个新鲜的又具有高性能的 web 框架，我不是很喜欢 django 这种很重的框架。刚好 tornado 介于了 flask 与 django 之间，很适合现在的我。在学习和掌握它的同时我也能和 flask 做对比。 正如它广泛的被人所知的那样，tornado 是一个非阻塞式(async">
+<meta property="og:updated_time" content="2018-01-28T06:34:12.278Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初识 tornado | ChenCheng&#39;s Blog">
+<meta name="twitter:description" content="tornado很开心能够接触到 tornado，因为一直在做以 flask 为主框架的 web 开发。想要多了解一个新鲜的又具有高性能的 web 框架，我不是很喜欢 django 这种很重的框架。刚好 tornado 介于了 flask 与 django 之间，很适合现在的我。在学习和掌握它的同时我也能和 flask 做对比。 正如它广泛的被人所知的那样，tornado 是一个非阻塞式(async">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">ChenCheng&#39;s Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          Teachnology only for better life
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/jamebluntcc" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">初识 tornado</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-10-23" class="post-meta__date date">2017-10-23</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/Web-develop/">Web develop</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/python/">python</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="tornado"><a href="#tornado" class="headerlink" title="tornado"></a>tornado</h3><p>很开心能够接触到 <a href="https://github.com/tornadoweb/tornado" target="_blank" rel="noopener">tornado</a>，因为一直在做以 <a href="http://flask.pocoo.org/" target="_blank" rel="noopener">flask</a> 为主框架的 web 开发。想要多了解一个新鲜的又具有高性能的 web 框架，我不是很喜欢 <a href="https://www.djangoproject.com/" target="_blank" rel="noopener">django</a> 这种很重的框架。刚好 tornado 介于了 flask 与 django 之间，很适合现在的我。在学习和掌握它的同时我也能和 flask 做对比。</p>
+<p>正如它广泛的被人所知的那样，tornado 是一个非阻塞式(asynchronous) web 框架。响应速度相当快，每秒可以处理数以千计的链接是 flask 以及 django 很难达到的速度。 对于实时 web 服务 tornado 是一个理想的框架。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tornado.web</span><br><span class="line"><span class="keyword">import</span> tornado.ioloop</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainHandler</span><span class="params">(tornado.web.RequestHandler)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self)</span>:</span></span><br><span class="line">		self.write(<span class="string">'hello, tornado'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main_app</span><span class="params">()</span>:</span></span><br><span class="line">	application = tornado.web.Application([(<span class="string">r'/'</span>, MainHandler),])</span><br><span class="line">	<span class="keyword">return</span> application</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">	app = main_app()</span><br><span class="line">	app.listen(<span class="number">9000</span>)</span><br><span class="line">	tornado.ioloop.IOLoop.current().start()</span><br></pre></td></tr></table></figure>
+<h2 id="tornado-模块"><a href="#tornado-模块" class="headerlink" title="tornado 模块"></a>tornado 模块</h2><h3 id="主要模块"><a href="#主要模块" class="headerlink" title="主要模块"></a>主要模块</h3><ul>
+<li>web：Friender(‘template.html’,title=title, items=items)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">使用 `self.render()` 进行渲染。可以看到和 jinja2 很类似, 也有熟悉的 `extends` 和 `block` 实现模板的继承。关于具体的模板详情可以参考[template](https://github.com/tornadoweb/tornado/blob/master/tornado/template.py)</span><br><span class="line"></span><br><span class="line">### cookie </span><br><span class="line"></span><br><span class="line">关于 web 开发 `cookie` 是很重要的一个浏览设置。我们的一些登录或者其他的信息就常常保存在 [cookie](https://zh.wikipedia.org/wiki/Cookie) 上。</span><br><span class="line"></span><br><span class="line">在 tornado 中可以通过 `set_cookie` 方法在用户的浏览中设置。</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">class MainHandler(tornado.web.RequestHandler):</span><br><span class="line">	def get(self):</span><br><span class="line">		if not self.get_cookie(&apos;mycookie&apos;):</span><br><span class="line">			self.set_cookie(&apos;mycookie&apos;, &apos;myvalue&apos;)</span><br><span class="line">			self.write(&apos;your cookie was not set yet&apos;)</span><br><span class="line">		else:</span><br><span class="line">			self.write(&apos;your cookie was set&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>当然上面的 cookie 设置很容易被恶意的客户端伪造，我们可以通过下面的方法设置安全的 cookie。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">application = tornado.web.Application([</span><br><span class="line">(<span class="string">r'/'</span>, MainHandler),</span><br><span class="line">], cookie_secret=<span class="string">'hard to guess'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainHandler</span><span class="params">(tornado.web.RequestHandler)</span>：</span></span><br><span class="line"><span class="class">	<span class="title">def</span> <span class="title">get</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> self.get_secure_cookie(<span class="string">'mycookie'</span>):</span><br><span class="line">			self.set_secure_cookie(<span class="string">'mycookie'</span>, <span class="string">'myvalue'</span>)</span><br><span class="line">			...</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			...</span><br></pre></td></tr></table></figure>
+<p>tornado 通过 <code>get_secure_cookie()</code> 和 <code>set_secure_cookie()</code> 方法支持了安全 cookie ，只是需要在创建应用的时候提供一个密令 <code>cookie_secret</code> 作为参数传入。</p>
+<h3 id="用户认证"><a href="#用户认证" class="headerlink" title="用户认证"></a>用户认证</h3><p>任何一个 web application 基本都有用户认系统，在 flask 中我们可以通过引入 <code>flask_login</code> 的插件实现用户认证，而在 tornado 中有自带的认证机制。</p>
+<p>所有已经认证的用户信息会被 tornado 保存在 <code>self.current_user</code> 当中，同时在模板中会有 <code>current_user</code> 可以直接引用到用户的信息。默认的 <code>current_user=None</code>。</p>
+<p>在 tornado 中实现认知功能，需要重写请求处理中的 <code>get_current_user()</code> 方法，通过 cookie 判断用户状态。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseHandler</span><span class="params">(tornado.web.RequestHandler)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">get_current_user</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">return</span> self.get_secure_cookie(<span class="string">'user'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainHandler</span><span class="params">(BaseHandler)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> self.get_current_user:</span><br><span class="line">			self.redirect(<span class="string">'/login'</span>)</span><br><span class="line">			<span class="keyword">return</span></span><br><span class="line">		name = tornado.escape.xhtml_escape(self.current_user)</span><br><span class="line">		self.write(<span class="string">'hello,'</span> + name)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LoginHandler</span><span class="params">(BaseHandler)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self)</span>:</span></span><br><span class="line">		self.write(<span class="string">'''</span></span><br><span class="line"><span class="string">		login form</span></span><br><span class="line"><span class="string">				   '''</span></span><br><span class="line">		)</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">post</span><span class="params">(self)</span>:</span></span><br><span class="line">		self.set_secure_cookie(<span class="string">'user'</span>, self.get_argument(<span class="string">'name'</span>))</span><br><span class="line">		self.redicret(<span class="string">'/'</span>)</span><br><span class="line"></span><br><span class="line">application = tornado.web.Application([</span><br><span class="line">(<span class="string">r'/'</span>, MainHandler),</span><br><span class="line">(<span class="string">r'/login'</span>, LoginHandler),</span><br><span class="line">], cookie_secret = <span class="string">'hard to guess'</span>)</span><br></pre></td></tr></table></figure>
+<p>对于那些必须要用户登录的操作，可以使用 <code>@tornado.web.authenticated</code> 在 <code>get</code> 方法上进行绑定。如果没有登录页面就会被重新定位到 <code>login_url</code> 上。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainHandler</span><span class="params">(BaseHandler)</span>:</span></span><br><span class="line"><span class="meta">	@tornado.web.authenticated</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> self.get_current_user:</span><br><span class="line">			self.redirect(<span class="string">'/login'</span>)</span><br><span class="line">			<span class="keyword">return</span></span><br><span class="line">		name = tornado.escape.xhtml_escape(self.current_user)</span><br><span class="line">		self.write(<span class="string">'hello,'</span> + name)</span><br><span class="line"></span><br><span class="line">settings = &#123;</span><br><span class="line"><span class="string">'cookie_secret'</span>: <span class="string">'hard to guess'</span>,</span><br><span class="line"><span class="string">'login_url'</span>: <span class="string">'/login'</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">application = tornado.web.Application([</span><br><span class="line">(<span class="string">r'/'</span>, MainHandler),</span><br><span class="line">(<span class="string">r'/login'</span>, LoginHandler),</span><br><span class="line">], **settings)</span><br></pre></td></tr></table></figure>
+<h3 id="非阻塞式异步请求"><a href="#非阻塞式异步请求" class="headerlink" title="非阻塞式异步请求"></a>非阻塞式异步请求</h3><p>使用 tornado 最大的优势就是本身是一个异步非阻塞式的 web 框架，当一个处理请求的行为被执行后，这个请求会自动地结束掉。因为 tornado 使用了一种非阻塞式的I/O模型，所以你可以改变这种默认的请求处理行为，让一个请求一直保持连接状态，而不是马上返回，知道一个主处理行为返回。要实现这种处理方式，需要使用 <code>tornado.web.asynchronous</code> 装饰器就可以了。</p>
+<p>在使用这个装饰器以后，你必须要调用 <code>self.finish()</code> 显式已完成 HTTP 的请求，否则用户的浏览器会一直等待服务器响应状态。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainHandler</span><span class="params">(tornado.web.RequestHandler)</span>:</span></span><br><span class="line"><span class="meta">	@tornado.web.asynchronous</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self)</span>:</span></span><br><span class="line">		self.write(<span class="string">'hello, tornado'</span>)</span><br><span class="line">		self.finish()</span><br></pre></td></tr></table></figure>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2016-2018. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

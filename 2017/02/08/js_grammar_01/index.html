@@ -7,25 +7,25 @@
     
 
     <title>
-      javascript 学习笔记(一) | chencheng&#39;s blog 
+      javascript 学习笔记(一) | ChenCheng&#39;s Blog 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
-      <meta name="author" content="chencheng">
+      <meta name="author" content="ChenCheng">
     
     
 
     <meta name="description" content="js的语法基础(一)arrayjs’s array本质是object; 123var arr = [1,2,3];typeof(arr) //&apos;object&apos;Object,keys(arr) //[&quot;0&quot;,&quot;1&quot;,&quot;2&quot;] 返回数组的所有键值 array的length属性，只要是array一定会有length属性。而且array的length属性是可写的，定义为该数组键名的最大整数值加1。所有清空">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript 学习笔记(一) | chencheng&#39;s blog">
+<meta property="og:title" content="javascript 学习笔记(一) | ChenCheng&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/2017/02/08/js_grammar_01/index.html">
-<meta property="og:site_name" content="chencheng&#39;s blog">
+<meta property="og:site_name" content="ChenCheng&#39;s Blog">
 <meta property="og:description" content="js的语法基础(一)arrayjs’s array本质是object; 123var arr = [1,2,3];typeof(arr) //&apos;object&apos;Object,keys(arr) //[&quot;0&quot;,&quot;1&quot;,&quot;2&quot;] 返回数组的所有键值 array的length属性，只要是array一定会有length属性。而且array的length属性是可写的，定义为该数组键名的最大整数值加1。所有清空">
-<meta property="og:updated_time" content="2017-09-30T07:57:58.932Z">
+<meta property="og:updated_time" content="2018-01-19T07:29:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript 学习笔记(一) | chencheng&#39;s blog">
+<meta name="twitter:title" content="javascript 学习笔记(一) | ChenCheng&#39;s Blog">
 <meta name="twitter:description" content="js的语法基础(一)arrayjs’s array本质是object; 123var arr = [1,2,3];typeof(arr) //&apos;object&apos;Object,keys(arr) //[&quot;0&quot;,&quot;1&quot;,&quot;2&quot;] 返回数组的所有键值 array的length属性，只要是array一定会有length属性。而且array的length属性是可写的，定义为该数组键名的最大整数值加1。所有清空">
     
     
@@ -58,12 +58,12 @@
 
         
 
-        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">chencheng&#39;s blog</a></h1>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">ChenCheng&#39;s Blog</a></h1>
         <hr class="panel-cover__divider" />
 
         
         <p class="panel-cover__description">
-          Technology only for better life
+          Teachnology only for better life
         </p>
         <hr class="panel-cover__divider panel-cover__divider--secondary" />
         
@@ -76,6 +76,9 @@
               
                 
                 <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
               
                 
                 <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
@@ -140,7 +143,7 @@ classes that you can use:
     
       <!-- Github -->
       <li class="navigation__item">
-        <a href="https://github.com/jamebluntcc" title="Jamebluntcc on GitHub">
+        <a href="https://github.com/jamebluntcc" title="Huno on GitHub">
           <i class='icon icon-social-github'></i>
           <span class="label">GitHub</span>
         </a>
@@ -183,6 +186,7 @@ classes that you can use:
   </div>
 </header>
 
+
     <div class="content-wrapper">
         <div class="content-wrapper__inner entry">
             
@@ -223,15 +227,15 @@ classes that you can use:
 
   <section id="post-content" class="article-content post">
     <h2 id="js的语法基础-一"><a href="#js的语法基础-一" class="headerlink" title="js的语法基础(一)"></a>js的语法基础(一)</h2><h3 id="array"><a href="#array" class="headerlink" title="array"></a>array</h3><p>js’s array本质是object;</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"><span class="keyword">typeof</span>(arr) <span class="comment">//'object'</span></div><div class="line"><span class="built_in">Object</span>,keys(arr) <span class="comment">//["0","1","2"] 返回数组的所有键值</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">typeof</span>(arr) <span class="comment">//'object'</span></span><br><span class="line"><span class="built_in">Object</span>,keys(arr) <span class="comment">//["0","1","2"] 返回数组的所有键值</span></span><br></pre></td></tr></table></figure>
 <p>array的<code>length</code>属性，只要是<code>array</code>一定会有<code>length</code>属性。而且<code>array</code>的<code>length</code>属性是可写的，定义为该数组键名的最大整数值加1。所有清空一个数组的方法：<code>arr = []</code>或者<code>arr.length = 0</code>。由于数组是对象的一种所有可以添加数组的属性，但不会影响到<code>length</code>属性;</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [];</div><div class="line">a[<span class="string">'p'</span>] = <span class="string">'abc'</span>;</div><div class="line">a.length <span class="comment">// 0</span></div><div class="line">a[<span class="number">2.1</span>] = <span class="string">'abc'</span>;</div><div class="line">a.length <span class="comment">//0</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [];</span><br><span class="line">a[<span class="string">'p'</span>] = <span class="string">'abc'</span>;</span><br><span class="line">a.length <span class="comment">// 0</span></span><br><span class="line">a[<span class="number">2.1</span>] = <span class="string">'abc'</span>;</span><br><span class="line">a.length <span class="comment">//0</span></span><br></pre></td></tr></table></figure>
 <p>js中还存在着类数组对象，定义只要有<code>length</code>属性的对象就是类数组对象。但是<code>length</code>属性不是动态值。典型的类数组对象是函数的参数<code>arguments</code>对象，以及大部分的DOM元素集，还有字符串。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// arguments对象</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">args</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="built_in">arguments</span> &#125;</div><div class="line"><span class="keyword">var</span> arrayLike = args(<span class="string">'a'</span>, <span class="string">'b'</span>);</div><div class="line"></div><div class="line">arrayLike[<span class="number">0</span>] <span class="comment">// 'a'</span></div><div class="line">arrayLike.length <span class="comment">// 2</span></div><div class="line">arrayLike <span class="keyword">instanceof</span> <span class="built_in">Array</span> <span class="comment">// false</span></div><div class="line"></div><div class="line"><span class="comment">// DOM元素集</span></div><div class="line"><span class="keyword">var</span> elts = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'h3'</span>);</div><div class="line">elts.length <span class="comment">// 3</span></div><div class="line">elts <span class="keyword">instanceof</span> <span class="built_in">Array</span> <span class="comment">// false</span></div><div class="line"></div><div class="line"><span class="comment">// 字符串</span></div><div class="line"><span class="string">'abc'</span>[<span class="number">1</span>] <span class="comment">// 'b'</span></div><div class="line"><span class="string">'abc'</span>.length <span class="comment">// 3</span></div><div class="line"><span class="string">'abc'</span> <span class="keyword">instanceof</span> <span class="built_in">Array</span> <span class="comment">// false</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// arguments对象</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">args</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="built_in">arguments</span> &#125;</span><br><span class="line"><span class="keyword">var</span> arrayLike = args(<span class="string">'a'</span>, <span class="string">'b'</span>);</span><br><span class="line"></span><br><span class="line">arrayLike[<span class="number">0</span>] <span class="comment">// 'a'</span></span><br><span class="line">arrayLike.length <span class="comment">// 2</span></span><br><span class="line">arrayLike <span class="keyword">instanceof</span> <span class="built_in">Array</span> <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// DOM元素集</span></span><br><span class="line"><span class="keyword">var</span> elts = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'h3'</span>);</span><br><span class="line">elts.length <span class="comment">// 3</span></span><br><span class="line">elts <span class="keyword">instanceof</span> <span class="built_in">Array</span> <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 字符串</span></span><br><span class="line"><span class="string">'abc'</span>[<span class="number">1</span>] <span class="comment">// 'b'</span></span><br><span class="line"><span class="string">'abc'</span>.length <span class="comment">// 3</span></span><br><span class="line"><span class="string">'abc'</span> <span class="keyword">instanceof</span> <span class="built_in">Array</span> <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 <p>数组的<code>slice</code>方法将类数组对象，变为真正的数组。<code>var arr = Array.prototype.slice.call(arrayLike);</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//for</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">logArgs</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; <span class="built_in">arguments</span>.length; i++)&#123;</div><div class="line">    <span class="built_in">console</span>.log(i + <span class="string">'.'</span> + <span class="built_in">arguments</span>[i])</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//forEach方法</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">logArgs</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">Array</span>.prototype.forEach.call(<span class="built_in">arguments</span>,<span class="function"><span class="keyword">function</span>(<span class="params">elem,i</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(i + <span class="string">'.'</span> + elem);</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"><span class="comment">//for...in 不仅可以遍历数组还能遍历对象 数组是对象的一种</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">logArgs</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> <span class="built_in">arguments</span>)&#123;</div><div class="line">    <span class="built_in">console</span>.log(i + <span class="string">'.'</span> + elem);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//for</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logArgs</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; <span class="built_in">arguments</span>.length; i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i + <span class="string">'.'</span> + <span class="built_in">arguments</span>[i])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//forEach方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logArgs</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">Array</span>.prototype.forEach.call(<span class="built_in">arguments</span>,<span class="function"><span class="keyword">function</span>(<span class="params">elem,i</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i + <span class="string">'.'</span> + elem);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//for...in 不仅可以遍历数组还能遍历对象 数组是对象的一种</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logArgs</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> <span class="built_in">arguments</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i + <span class="string">'.'</span> + elem);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="js错误处理机制"><a href="#js错误处理机制" class="headerlink" title="js错误处理机制"></a>js错误处理机制</h2><h3 id="Error对象"><a href="#Error对象" class="headerlink" title="Error对象"></a>Error对象</h3><p>js在运行过程中出现错误就会抛出一个错误对象，js提供一个<code>Error</code>构造函数，所有抛出的错误都是这个构造函数的实例。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> err = <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error'</span>);</div><div class="line">err.message <span class="comment">//Error</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> err = <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error'</span>);</span><br><span class="line">err.message <span class="comment">//Error</span></span><br></pre></td></tr></table></figure>
 <p>我们调用<code>Error</code>构造函数生成一个<code>err</code>实例，<code>Error</code>构造函数接收一个参数，表示错误提示,可以从实例的<code>message</code>属性读到这个参数。而且js规定<code>Error</code>对象的实例必须有<code>message</code>属性。 js中的6类错误(都是<code>Error</code>对象的派生):</p>
 <ul>
 <li>SyntaxError:代码解析出错;</li>
@@ -242,13 +246,13 @@ classes that you can use:
 <li>URIError:URI相关函数参数不正确;</li>
 </ul>
 <p>js中还可以自定义错误对象;</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">UserError</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.message = message || <span class="string">'defalut'</span>;</div><div class="line">  <span class="keyword">this</span>.name = <span class="string">'UserError'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">UserError.prototype = <span class="keyword">new</span> <span class="built_in">Error</span>();</div><div class="line">UserError.prototype.constructor = UserError;</div><div class="line"><span class="keyword">new</span> UserError(<span class="string">"this is a custom Error"</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UserError</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.message = message || <span class="string">'defalut'</span>;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'UserError'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">UserError.prototype = <span class="keyword">new</span> <span class="built_in">Error</span>();</span><br><span class="line">UserError.prototype.constructor = UserError;</span><br><span class="line"><span class="keyword">new</span> UserError(<span class="string">"this is a custom Error"</span>)</span><br></pre></td></tr></table></figure>
 <p>上面代码自定义一个错误对象UserError,让它继承Error对象。然后就可以生成这种自定义错误。简单的错误返回一条出错信息就可以了，但是如果遇到复杂的情况，就需要在出错以后进一步处理，<strong>最好的办法就是使用<code>throw</code>语句手动抛出一个<code>Error</code>对象</strong>： <code>throw new Error</code>;</p>
 <h3 id="try…catch结构"><a href="#try…catch结构" class="headerlink" title="try…catch结构"></a>try…catch结构</h3><p>为了能够处理错误，需要使用<code>try...catch</code>结构。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>&#123;</div><div class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error'</span>);</div><div class="line">&#125;<span class="keyword">catch</span>(e)&#123;</div><div class="line">  <span class="built_in">console</span>.log(e.name + <span class="string">": "</span> + e.message);</div><div class="line">  <span class="built_in">console</span>.log(e.stack);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error'</span>);</span><br><span class="line">&#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e.name + <span class="string">": "</span> + e.message);</span><br><span class="line">  <span class="built_in">console</span>.log(e.stack);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面代码块，<code>try</code>代码抛出一个错误，js将代码转到<code>catch</code>代码块，错误由<code>catch</code>代码捕获。<code>catch</code>接收一个参数，表示<code>try</code>代码块抛出的错误值。</p>
 <h3 id="加入Finally"><a href="#加入Finally" class="headerlink" title="加入Finally"></a>加入Finally</h3><p>添加<code>Finally</code>后，表明不管是否代码出错就会将在最后运行的语句。同时即使有<code>return</code>语句在前，也是优先执行<code>Finally</code>代码块最后才返回<code>return</code>语句。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">openFile();</div><div class="line"></div><div class="line"><span class="keyword">try</span>&#123;</div><div class="line">  writeFile(Data);</div><div class="line">&#125;<span class="keyword">catch</span>(e)&#123;</div><div class="line">  handleError(e);</div><div class="line">&#125;<span class="keyword">finally</span>&#123;</div><div class="line">  closeFile();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">openFile();</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">  writeFile(Data);</span><br><span class="line">&#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">  handleError(e);</span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">  closeFile();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </section>
 
@@ -264,9 +268,10 @@ classes that you can use:
 
             <footer class="footer">
 
-    <span class="footer__copyright">&copy; 2015-2017. | power by <a href="https://hexo.io/">Hexo</a> | themes <a href="https://github.com/someus/huno">Huno</a></span>
+    <span class="footer__copyright">&copy; 2016-2018. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
     
 </footer>
+
         </div>
     </div>
 
@@ -303,10 +308,6 @@ classes that you can use:
 
     
     
-
-    <script src="/js/jquery.githubRepoWidget.min.js"></script>
-
-
     <!--kill ie6 -->
 <!--[if IE 6]>
   <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>

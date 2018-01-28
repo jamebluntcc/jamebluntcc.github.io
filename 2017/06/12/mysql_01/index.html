@@ -7,25 +7,25 @@
     
 
     <title>
-      mysql | chencheng&#39;s blog 
+      mysql | ChenCheng&#39;s Blog 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
-      <meta name="author" content="chencheng">
+      <meta name="author" content="ChenCheng">
     
     
 
     <meta name="description" content="mysql 基本操作登录mysql1mysql -h hostname -u username -p  -h:指定客户端所登录的mysql主机名； -u:登录用户名； -p:登录密码；  查看mysql基本信息 查看全部数据库：show databases;  使用数据库：use database;或者在登录使用mysql -D databasename -h hostname -u userna">
 <meta name="keywords" content="sql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql | chencheng&#39;s blog">
+<meta property="og:title" content="mysql | ChenCheng&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/2017/06/12/mysql_01/index.html">
-<meta property="og:site_name" content="chencheng&#39;s blog">
+<meta property="og:site_name" content="ChenCheng&#39;s Blog">
 <meta property="og:description" content="mysql 基本操作登录mysql1mysql -h hostname -u username -p  -h:指定客户端所登录的mysql主机名； -u:登录用户名； -p:登录密码；  查看mysql基本信息 查看全部数据库：show databases;  使用数据库：use database;或者在登录使用mysql -D databasename -h hostname -u userna">
-<meta property="og:updated_time" content="2017-06-11T15:27:18.477Z">
+<meta property="og:updated_time" content="2018-01-19T07:29:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql | chencheng&#39;s blog">
+<meta name="twitter:title" content="mysql | ChenCheng&#39;s Blog">
 <meta name="twitter:description" content="mysql 基本操作登录mysql1mysql -h hostname -u username -p  -h:指定客户端所登录的mysql主机名； -u:登录用户名； -p:登录密码；  查看mysql基本信息 查看全部数据库：show databases;  使用数据库：use database;或者在登录使用mysql -D databasename -h hostname -u userna">
     
     
@@ -58,12 +58,12 @@
 
         
 
-        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">chencheng&#39;s blog</a></h1>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">ChenCheng&#39;s Blog</a></h1>
         <hr class="panel-cover__divider" />
 
         
         <p class="panel-cover__description">
-          Technology only for better life
+          Teachnology only for better life
         </p>
         <hr class="panel-cover__divider panel-cover__divider--secondary" />
         
@@ -76,6 +76,9 @@
               
                 
                 <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
               
                 
                 <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
@@ -140,7 +143,7 @@ classes that you can use:
     
       <!-- Github -->
       <li class="navigation__item">
-        <a href="https://github.com/jamebluntcc" title="Jamebluntcc on GitHub">
+        <a href="https://github.com/jamebluntcc" title="Huno on GitHub">
           <i class='icon icon-social-github'></i>
           <span class="label">GitHub</span>
         </a>
@@ -183,6 +186,7 @@ classes that you can use:
   </div>
 </header>
 
+
     <div class="content-wrapper">
         <div class="content-wrapper__inner entry">
             
@@ -222,7 +226,7 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h2 id="mysql-基本操作"><a href="#mysql-基本操作" class="headerlink" title="mysql 基本操作"></a>mysql 基本操作</h2><h3 id="登录mysql"><a href="#登录mysql" class="headerlink" title="登录mysql"></a>登录mysql</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -h hostname -u username -p</div></pre></td></tr></table></figure>
+    <h2 id="mysql-基本操作"><a href="#mysql-基本操作" class="headerlink" title="mysql 基本操作"></a>mysql 基本操作</h2><h3 id="登录mysql"><a href="#登录mysql" class="headerlink" title="登录mysql"></a>登录mysql</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h hostname -u username -p</span><br></pre></td></tr></table></figure>
 <ul>
 <li>-h:指定客户端所登录的mysql主机名；</li>
 <li>-u:登录用户名；</li>
@@ -236,12 +240,12 @@ classes that you can use:
 <li><p>查看表格基本信息: <code>describe table;</code></p>
 </li>
 </ul>
-<h3 id="mysql的权限管理"><a href="#mysql的权限管理" class="headerlink" title="mysql的权限管理"></a>mysql的权限管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">create database r;</div><div class="line">create user &apos;haha&apos;@&apos;localhost&apos; identified by &apos;haha&apos;; #创建用户</div><div class="line">grant all on r.* TO &apos;haha&apos;@&apos;localhost&apos; #赋予haha在r上的操作权限</div></pre></td></tr></table></figure>
+<h3 id="mysql的权限管理"><a href="#mysql的权限管理" class="headerlink" title="mysql的权限管理"></a>mysql的权限管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create database r;</span><br><span class="line">create user &apos;haha&apos;@&apos;localhost&apos; identified by &apos;haha&apos;; #创建用户</span><br><span class="line">grant all on r.* TO &apos;haha&apos;@&apos;localhost&apos; #赋予haha在r上的操作权限</span><br></pre></td></tr></table></figure>
 <h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><ul>
 <li><p>创建数据库：<code>create database 数据库名 [其它选项];</code></p>
 </li>
 <li><p>创建数据库表：<code>create table 表名称;</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">create table students</div><div class="line">(</div><div class="line">id int unsigned not null auto_increment primary key,</div><div class="line">name varchar(20) not null,</div><div class="line">sex varchar(4) not null,</div><div class="line">age tinyint unsigned not null,</div><div class="line">tel varchar(13) null default &apos;-&apos;</div><div class="line">);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create table students</span><br><span class="line">(</span><br><span class="line">id int unsigned not null auto_increment primary key,</span><br><span class="line">name varchar(20) not null,</span><br><span class="line">sex varchar(4) not null,</span><br><span class="line">age tinyint unsigned not null,</span><br><span class="line">tel varchar(13) null default &apos;-&apos;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 <p>对于较长的sql语句可以写在文本中，然后再导入到mysql中。<code>mysql -D test -u root -p &lt; students.sql</code></p>
 <ul>
 <li>插入：<code>insert into tablename values(...);</code> 插入部分数据:<code>insert into students (name,sex,age) values(&#39;Tom&#39;,&#39;male&#39;,21);</code></li>
@@ -282,9 +286,10 @@ classes that you can use:
 
             <footer class="footer">
 
-    <span class="footer__copyright">&copy; 2015-2017. | power by <a href="https://hexo.io/">Hexo</a> | themes <a href="https://github.com/someus/huno">Huno</a></span>
+    <span class="footer__copyright">&copy; 2016-2018. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
     
 </footer>
+
         </div>
     </div>
 
@@ -321,10 +326,6 @@ classes that you can use:
 
     
     
-
-    <script src="/js/jquery.githubRepoWidget.min.js"></script>
-
-
     <!--kill ie6 -->
 <!--[if IE 6]>
   <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>

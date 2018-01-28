@@ -7,25 +7,25 @@
     
 
     <title>
-      python 字符串 | chencheng&#39;s blog 
+      python 字符串 | ChenCheng&#39;s Blog 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
-      <meta name="author" content="chencheng">
+      <meta name="author" content="ChenCheng">
     
     
 
     <meta name="description" content="关于字符串python 字符串存在两种，一种是普通字符串 一种是 unicode 字符串。  python 字符串中可以在前面加上 R/r 表示是原生字符串; python 字符串中可以在前面加上 U/u 表示是 unicode 字符串;其次 python 的字符串不能被改变，这意味着所有关于字符串的操作都是创建新的字符串。  字符串的常用技巧 strip():去掉字符串两端的空格或者其它字符,常">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python 字符串 | chencheng&#39;s blog">
+<meta property="og:title" content="python 字符串 | ChenCheng&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/2017/07/05/python_str/index.html">
-<meta property="og:site_name" content="chencheng&#39;s blog">
+<meta property="og:site_name" content="ChenCheng&#39;s Blog">
 <meta property="og:description" content="关于字符串python 字符串存在两种，一种是普通字符串 一种是 unicode 字符串。  python 字符串中可以在前面加上 R/r 表示是原生字符串; python 字符串中可以在前面加上 U/u 表示是 unicode 字符串;其次 python 的字符串不能被改变，这意味着所有关于字符串的操作都是创建新的字符串。  字符串的常用技巧 strip():去掉字符串两端的空格或者其它字符,常">
-<meta property="og:updated_time" content="2017-07-05T14:32:32.072Z">
+<meta property="og:updated_time" content="2018-01-19T07:29:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python 字符串 | chencheng&#39;s blog">
+<meta name="twitter:title" content="python 字符串 | ChenCheng&#39;s Blog">
 <meta name="twitter:description" content="关于字符串python 字符串存在两种，一种是普通字符串 一种是 unicode 字符串。  python 字符串中可以在前面加上 R/r 表示是原生字符串; python 字符串中可以在前面加上 U/u 表示是 unicode 字符串;其次 python 的字符串不能被改变，这意味着所有关于字符串的操作都是创建新的字符串。  字符串的常用技巧 strip():去掉字符串两端的空格或者其它字符,常">
     
     
@@ -58,12 +58,12 @@
 
         
 
-        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">chencheng&#39;s blog</a></h1>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">ChenCheng&#39;s Blog</a></h1>
         <hr class="panel-cover__divider" />
 
         
         <p class="panel-cover__description">
-          Technology only for better life
+          Teachnology only for better life
         </p>
         <hr class="panel-cover__divider panel-cover__divider--secondary" />
         
@@ -76,6 +76,9 @@
               
                 
                 <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
               
                 
                 <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
@@ -140,7 +143,7 @@ classes that you can use:
     
       <!-- Github -->
       <li class="navigation__item">
-        <a href="https://github.com/jamebluntcc" title="Jamebluntcc on GitHub">
+        <a href="https://github.com/jamebluntcc" title="Huno on GitHub">
           <i class='icon icon-social-github'></i>
           <span class="label">GitHub</span>
         </a>
@@ -182,6 +185,7 @@ classes that you can use:
     <div class="panel-cover--overlay"></div>
   </div>
 </header>
+
 
     <div class="content-wrapper">
         <div class="content-wrapper__inner entry">
@@ -232,11 +236,11 @@ classes that you can use:
 <li><code>join</code>:join 方法不需要多说，但是需要注意一点的是当使用创建大字符串时使用 <code>join</code> 比 <code>+=</code> 有优势很多。</li>
 <li>快速将一个字符串反转的方法:<code>revese_str = str[::-1]</code><br>改变多行文本字符串的缩进：</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">reindent</span><span class="params">(s,numSpace)</span>:</span></div><div class="line">  leading_space = numSpace * <span class="string">' '</span></div><div class="line">  lines = [leading_space + line <span class="keyword">for</span> line <span class="keyword">in</span> s.splitlines() ]</div><div class="line">  <span class="keyword">return</span> <span class="string">'\n'</span>.join(lines)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reindent</span><span class="params">(s,numSpace)</span>:</span></span><br><span class="line">  leading_space = numSpace * <span class="string">' '</span></span><br><span class="line">  lines = [leading_space + line <span class="keyword">for</span> line <span class="keyword">in</span> s.splitlines() ]</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'\n'</span>.join(lines)</span><br></pre></td></tr></table></figure>
 <p><code>s.splitlines</code>将多行字符串按行进行分割为<code>list</code></p>
 <h2 id="字符串的编码问题"><a href="#字符串的编码问题" class="headerlink" title="字符串的编码问题"></a>字符串的编码问题</h2><p>关键技巧: 总是在IO的时候进行转换;所有外来的文本进入程序时都需要先转换为 <code>unicode</code> 当数据从程序出去时都需要转为相应的编码字符。<br>在这里我们主要关注 python2.7 的编码问题：</p>
 <p>首先 <code>str</code> 和 <code>unicode</code> 都是 <code>basestring</code> 的子类，<code>str</code> 严格的说应该是字节串，它是 <code>unicode</code> 经过编码后的类型</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding = UTF-8</span></div><div class="line">u = <span class="string">u'哈'</span></div><div class="line"><span class="keyword">print</span> repr(u) <span class="comment"># u'\43ca3'</span></div><div class="line">s = s.encode(<span class="string">'UTF-8'</span>)</div><div class="line"><span class="keyword">print</span> repr(s) <span class="comment"># '\xe5\xb1\x89'</span></div><div class="line">u2 = s.decode(<span class="string">'UTF-8'</span>)</div><div class="line"><span class="keyword">print</span> repr(u2) <span class="comment">#u'\43ca3'</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding = UTF-8</span></span><br><span class="line">u = <span class="string">u'哈'</span></span><br><span class="line"><span class="keyword">print</span> repr(u) <span class="comment"># u'\43ca3'</span></span><br><span class="line">s = s.encode(<span class="string">'UTF-8'</span>)</span><br><span class="line"><span class="keyword">print</span> repr(s) <span class="comment"># '\xe5\xb1\x89'</span></span><br><span class="line">u2 = s.decode(<span class="string">'UTF-8'</span>)</span><br><span class="line"><span class="keyword">print</span> repr(u2) <span class="comment">#u'\43ca3'</span></span><br></pre></td></tr></table></figure>
 <p>在进行IO时，使用 <code>open()</code> 方法打开文件 <code>read()</code> 使用读取的是 <code>str</code> 所以读取后要进行 <code>decode()</code> 在 <code>write()</code> 时如果是 <code>unicode</code> 就需要 <code>encode</code>。另外 模块 <code>codecs</code> 提供的 <code>open</code> 方法在打开文件时读取返回是 <code>unicode</code>。</p>
 
   </section>
@@ -253,9 +257,10 @@ classes that you can use:
 
             <footer class="footer">
 
-    <span class="footer__copyright">&copy; 2015-2017. | power by <a href="https://hexo.io/">Hexo</a> | themes <a href="https://github.com/someus/huno">Huno</a></span>
+    <span class="footer__copyright">&copy; 2016-2018. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
     
 </footer>
+
         </div>
     </div>
 
@@ -292,10 +297,6 @@ classes that you can use:
 
     
     
-
-    <script src="/js/jquery.githubRepoWidget.min.js"></script>
-
-
     <!--kill ie6 -->
 <!--[if IE 6]>
   <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
