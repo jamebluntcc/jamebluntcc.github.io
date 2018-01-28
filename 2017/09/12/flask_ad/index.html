@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      myflask 进阶 | ChenCheng&#39;s Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="ChenCheng">
+    
+    
+
+    <meta name="description" content="flask contextflask 的一个比较经典的设计是 App context 与 Request context。 1 flask 中的上下文  程序上下文  current app g   请求上下文  request session    从一个 Flask app 读入配置并启动开始，就进入了 App Context，其中我们可以访问到配置文件，打开资源文件，通过路由规则反向构造 U">
+<meta name="keywords" content="flask">
+<meta property="og:type" content="article">
+<meta property="og:title" content="myflask 进阶 | ChenCheng&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/2017/09/12/flask_ad/index.html">
+<meta property="og:site_name" content="ChenCheng&#39;s Blog">
+<meta property="og:description" content="flask contextflask 的一个比较经典的设计是 App context 与 Request context。 1 flask 中的上下文  程序上下文  current app g   请求上下文  request session    从一个 Flask app 读入配置并启动开始，就进入了 App Context，其中我们可以访问到配置文件，打开资源文件，通过路由规则反向构造 U">
+<meta property="og:updated_time" content="2018-01-28T07:57:06.062Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="myflask 进阶 | ChenCheng&#39;s Blog">
+<meta name="twitter:description" content="flask contextflask 的一个比较经典的设计是 App context 与 Request context。 1 flask 中的上下文  程序上下文  current app g   请求上下文  request session    从一个 Flask app 读入配置并启动开始，就进入了 App Context，其中我们可以访问到配置文件，打开资源文件，通过路由规则反向构造 U">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">ChenCheng&#39;s Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          Teachnology only for better life
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/jamebluntcc" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">myflask 进阶</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-09-12" class="post-meta__date date">2017-09-12</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/full-stack-python/">full stack python</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/flask/">flask</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="flask-context"><a href="#flask-context" class="headerlink" title="flask context"></a>flask context</h3><p>flask 的一个比较经典的设计是 <code>App context</code> 与 <code>Request context</code>。</p>
+<p>1 flask 中的上下文</p>
+<ul>
+<li><p>程序上下文</p>
+<ul>
+<li>current app</li>
+<li>g</li>
+</ul>
+</li>
+<li><p>请求上下文</p>
+<ul>
+<li>request</li>
+<li>session</li>
+</ul>
+</li>
+</ul>
+<p>从一个 Flask app 读入配置并启动开始，就进入了 <code>App Context</code>，其中我们可以访问到配置文件，打开资源文件，<br>通过路由规则反向构造 URL 等。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, current_app</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@[python]app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">return</span> <span class="string">'Hello &#123;0&#125;'</span>.format(current_app.name)</span><br></pre></td></tr></table></figure>
+<p>如上程序可以很自然的读出 current_app.name，<code>current_app</code> 是一个本地代理，它的类型是 <code>werkzeug.local.LocalProxy</code> 它所代理的即是我们的 app 对象，也就是 <code>current_app == LocalProxy(app)</code>。使用 <code>current_app</code> 是因为它也是一个 <code>ThreadLocal</code> 变量，对它的改动不会影响到其它的线程。可以使用 <code>current_app._get_current_object()</code> 方法来取得 app 对象。</p>
+<p>在离线脚本里也可以显式的建立一个<code>App Context</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, current_app</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"><span class="keyword">with</span> app.app_context():</span><br><span class="line">	<span class="keyword">print</span> current_app.name</span><br></pre></td></tr></table></figure>
+<p>对于 Flask Web 来说每一个请求都是一个独立的线程，因为每一个请求都不是独立的话，想象下同时多个用户在发送请求的时候请求必须是独立，要不然会出现数据的冲突。请求之间的信息要完全隔离，避免冲突，这里就必须需要使用到 <code>Thread Local</code>。</p>
+<p>在 python 中实现最简单的 <code>Thread Local</code> 方法如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line">mydata = threading.local() <span class="comment"># 创建 Thread Local 对象</span></span><br><span class="line">mydata.number = <span class="number">12</span></span><br><span class="line">log = []</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">	mydata.number = <span class="number">13</span></span><br><span class="line">	log.append(mydata.number) <span class="comment"># 在这线程里已经修改了数据</span></span><br><span class="line"></span><br><span class="line">thread = threading.Thread(target=f)</span><br><span class="line">thread.start()</span><br><span class="line"><span class="keyword">print</span> log  <span class="comment"># [13]</span></span><br><span class="line"><span class="keyword">print</span> mydata.number  <span class="comment"># 12  # 主线程没有改变</span></span><br></pre></td></tr></table></figure></p>
+<p>因此只有<code>Thread Local</code>对象，就能让同一个对象在多个线程下做到状态的隔离。在 Flask 中 基于<code>werkzeug</code> 实现了自己的本地线程，同时还实现了两种数据结构：</p>
+<ul>
+<li>LocalStack: 基于 <code>werkzeug.local.Local</code> 实现的栈结构，可以将对象推入，弹出，也可以快速拿到栈顶对象。</li>
+<li>LocalProxy: 标准的代理模式，构造此结构的时候接受一个可以调用的对象，一般是函数，这个函数在被调用后返回一个本身就是<code>Thread Local</code>对象。它是通过 <code>LocalStack</code> 实例化的栈顶对象。对于这个 <code>LocalProxy</code> 的处理都会转发到这个栈顶对象上。</li>
+</ul>
+<p>在 flask 中，<code>App Context</code> 表示了应用级别的上下文，比如说配置文件中的数据库连接信。<code>Request Context</code> 代表的是请求级别的上下文。如当前访问的 URL。</p>
+<p>这两种上下文对象都定义在 <code>flask.ctx</code> 中，它们的用法是推入 <code>flask.globals</code> 中创建的 <code>_app_ctx_stack</code>和<code>_request_ctx_stack</code>这两个实例化的 <code>Local Stack</code>对象。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, current_app</span><br><span class="line"><span class="keyword">from</span> flask.globals <span class="keyword">import</span> _app_ctx_stack, _request_ctx_stack</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">	<span class="keyword">print</span> _app_ctx_stack.top</span><br><span class="line">	<span class="keyword">print</span> _request_ctx_stack.top</span><br><span class="line">	<span class="keyword">print</span> _app_ctx_stack()</span><br><span class="line">	<span class="keyword">print</span> current_app</span><br><span class="line">	<span class="comment"># 推入 app context</span></span><br><span class="line">	ctx = app.app_context()</span><br><span class="line">	ctx.push()</span><br><span class="line">	<span class="keyword">print</span> _app_ctx_stack.top</span><br><span class="line">	<span class="keyword">print</span> _app_ctx_stack.top <span class="keyword">is</span> ctx</span><br><span class="line">	<span class="keyword">print</span> current_app</span><br><span class="line">	ctx.pop()</span><br><span class="line">	<span class="keyword">print</span> current_app</span><br></pre></td></tr></table></figure>
+<p>需要注意的是当使用 <code>app = Flask(__name__)</code> 构造出一个 <code>Flask App</code> 时，并不会被自动推入 Stack，所以此时的 Local Stack 的栈顶是空的， <code>current_app</code> 也是 unbound 状态。</p>
+<p>所以在离线脚本中连接数据库的时候，当我们使用 <code>Flask-SQLalchemy</code> 写成的 Model 上调用 <code>User.query.get(user_id)</code> 就会立即出现 <code>RuntimeError</code>。因为此时的 <code>App Context</code> 还没有被推入栈中，而 Flask-SQLalchemy 需要做数据库连接的时候取访问 <code>current_app.config</code> current_app 指向的却是 <code>_app_ctx_stack</code> 为空的栈顶。所以一般要先将 App 的 APP Context 推入栈中，栈顶不为空后 <code>current_app</code> 这个 LocalProxy 对象就很自然的取得 config 属性转发到当前 APP 上。</p>
+<p>但是需要注意的一点是在我们应用启动后并不需要显式的推入 APP context，原因是在于在请求上下文发生后，如果没有检查到 APP context 就会隐式的推入一个应用上下文。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> request, Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"><span class="meta">@app.route('/people/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">people</span><span class="params">()</span>:</span></span><br><span class="line">	name = request.args.get(<span class="string">'name'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>这里当用户访问 /people/ 的时候，flask 会去找一个叫做<code>_request_ctx_stack</code> 的栈顶对象，它就是 <code>LocalProxy</code> 的实例。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> partial</span><br><span class="line"><span class="keyword">from</span> werkzeug.local <span class="keyword">import</span> LocalProxy</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_lookup_req_object</span><span class="params">(name)</span>:</span></span><br><span class="line">	top = _request_ctx_stack.top</span><br><span class="line">	<span class="keyword">if</span> top <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">		<span class="keyword">raise</span> RuntimeError(<span class="string">'working outside of request context'</span>)</span><br><span class="line">	<span class="keyword">return</span> getattr(top, name)</span><br><span class="line"></span><br><span class="line">request = LocalProxy(partial(_lookup_req_object, <span class="string">'request'</span>))</span><br></pre></td></tr></table></figure>
+<p>在 flask  中有这样的几个 hook 装饰器：</p>
+<ul>
+<li>before_first_request：在处理第一次请求之前执行。</li>
+<li>before_request：在每次请求前执行。</li>
+<li>teardown_appcontext：不管有无异常，注册函数都会在每次请求后执行。</li>
+<li>context_processor：上下文处理的装饰器，返回的字典中的键可以在上下文中使用。</li>
+<li>errorhandle：errorhandle 接受状态码，可以自定义返回这种状态码的响应处理方法。</li>
+<li>template_filter：在使用<code>jinja2</code>模板的时候可以方便的注册过滤器。</li>
+</ul>
+<p>接下来在 code 中的 <a href="https://github.com/jamebluntcc/flask_advance" target="_blank" rel="noopener">app_with_local_proxy.py</a> 可以看到演示代码，如何使用<code>LocalProxy</code> 代替 <code>flask.g</code>。其中 get_current_user 返回<code>LocalStack</code>的栈对象，然后使用<code>LocalProxy</code>进行代理，结果返回一个应用上下文对象，在应用上下文以及请求上下文中被作为全局变量使用。</p>
+<h3 id="flask-url"><a href="#flask-url" class="headerlink" title="flask url"></a>flask url</h3><p>对于 <code>url_for</code>  最常见的使用有两个：</p>
+<ul>
+<li>作为常规链接使用 <code>url_for(&#39;view func name&#39;)</code> 接受一个字符串，其值为视图函数的名字</li>
+<li>作为静态文件的特殊路由 <code>url_for(&#39;static&#39;, filename=&#39;&#39;)</code> 可以作为内部文件与用户进行互通</li>
+</ul>
+<h3 id="flask-form"><a href="#flask-form" class="headerlink" title="flask form"></a>flask form</h3><p>web 表单是作为前端用户最常用的输入，通过<code>request.form</code>对象传递到后台。在 flask 中有 <code>flask-wtf</code> 与 <code>wtforms</code>协同实现 web 表单的生成和验证，一般的 flask web application 中会将 forms 作为一个独立的模块进行处理。进阶的 form 会对 validate 方法进行继承扩展，详细请参考<a href="https://github.com/jamebluntcc/flask_advance" target="_blank" rel="noopener">flask advance</a> 里面的 form 设计。值得注意的是 <code>flask-wtf</code> 中的表单都实现了<code>CSRF</code>保护，在 config 文件中增加一个<code>SECRET_KEY</code>的值便可实现此功能。关于表单在 HTML 上的渲染也可以参考上面的 flask-auth-system 项目。<br>这里再多提一点就是关于 <code>flash</code> 消息的使用，当用户在 web 表单中进行了相应的输入，页面需要作出相应的反馈的时间。<code>flash</code> 就变得很有用，在 HTML 中 flask 开放了 <code>get_flashed_messages()</code> 给模板，用于获取并渲染信息。<br>HTML 的渲染模板如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for message in get_flashed_messages() %&#125;</span><br><span class="line">&lt;div class=&quot;alert alert-warning&quot;&gt;</span><br><span class="line">	&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot;&gt;&amp;times;&lt;/button&gt;</span><br><span class="line">		&#123;&#123; message &#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure></p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2016-2018. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      web deploy | ChenCheng&#39;s Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="ChenCheng">
+    
+    
+
+    <meta name="description" content="在使用 flask 或者 django 进行开发的时候，基本做调试的工作都是自带的 web 服务器上，但是在生成环境上，需要更加稳定的环境。在 python web 开发里面，基本使用 uwsgi 以及 gunicorn 作为 wsgi 容器。 gunicorn如果没有安装过 gunicorn 直接 sudo pip install gunicorn 进行安装。现在我们先生成一个最简答的 web">
+<meta name="keywords" content="web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web deploy | ChenCheng&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/2017/11/23/web_deploy/index.html">
+<meta property="og:site_name" content="ChenCheng&#39;s Blog">
+<meta property="og:description" content="在使用 flask 或者 django 进行开发的时候，基本做调试的工作都是自带的 web 服务器上，但是在生成环境上，需要更加稳定的环境。在 python web 开发里面，基本使用 uwsgi 以及 gunicorn 作为 wsgi 容器。 gunicorn如果没有安装过 gunicorn 直接 sudo pip install gunicorn 进行安装。现在我们先生成一个最简答的 web">
+<meta property="og:updated_time" content="2018-01-28T08:04:28.741Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="web deploy | ChenCheng&#39;s Blog">
+<meta name="twitter:description" content="在使用 flask 或者 django 进行开发的时候，基本做调试的工作都是自带的 web 服务器上，但是在生成环境上，需要更加稳定的环境。在 python web 开发里面，基本使用 uwsgi 以及 gunicorn 作为 wsgi 容器。 gunicorn如果没有安装过 gunicorn 直接 sudo pip install gunicorn 进行安装。现在我们先生成一个最简答的 web">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">ChenCheng&#39;s Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          Teachnology only for better life
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/jamebluntcc" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">web deploy</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-11-23" class="post-meta__date date">2017-11-23</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/full-stack-python/">full stack python</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/web/">web</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>在使用 <code>flask</code> 或者 <code>django</code> 进行开发的时候，基本做调试的工作都是自带的 web 服务器上，但是在生成环境上，需要更加稳定的环境。在 python web 开发里面，基本使用 <code>uwsgi</code> 以及 <code>gunicorn</code> 作为 <code>wsgi</code> 容器。</p>
+<h3 id="gunicorn"><a href="#gunicorn" class="headerlink" title="gunicorn"></a>gunicorn</h3><p>如果没有安装过 <code>gunicorn</code> 直接 <code>sudo pip install gunicorn</code> 进行安装。现在我们先生成一个最简答的 web app：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line">app.route(<span class="string">'/'</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">return</span> <span class="string">'test gunicorn'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">	app.run()</span><br></pre></td></tr></table></figure>
+<p>使用 <code>gunicorn</code> 也很简单，将上面的代码存在一个叫 <code>app.py</code> 的文件里：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gunicorn -w 4 app.app -b 0.0.0.0:9000</span><br></pre></td></tr></table></figure>
+<p>其中，<code>w</code> 是 work，后面跟上 <code>module:app</code>，最后接上<code>host</code> 以及 <code>port</code>。</p>
+<h3 id="uwsgi"><a href="#uwsgi" class="headerlink" title="uwsgi"></a>uwsgi</h3><p>安装 <code>sudo pip install uwsgi</code>。<br><code>uwsgi</code> 的使用也极其简单，比 <code>gunicorn</code> 命令的复杂点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwsgi --http 0.0.0.0:9000 --wsgi-file app.py --callable app --processes 4 - threads 2 --stats 0.0.0.0:5000</span><br></pre></td></tr></table></figure>
+<p>上面可以看到 <code>http</code> 就是 <code>host</code> + <code>port</code>。<code>wsgi-file</code> 就是主启动文件，<code>callable</code> 是程序实例。<code>uwsgi</code> 也可以通过文件进行配置，新建一个叫 <code>uwsgi.ini</code> 的文件，具体详情参考<a href="https://uwsgi-docs.readthedocs.io/en/latest/" target="_blank" rel="noopener">这里</a>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwsgi --ini uwsgi.ini</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>需要注意的是如果是裸跑 uwsgi 的程序需要接 http 参数，当使用希望被反向代理如 nginx 配合一起使用时，应该使用 –http-socket。</p>
+</blockquote>
+<h3 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h3><p><code>nginx</code> 不需要多说，python web 开发主要使用的反向代理工具。</p>
+<p>第一步如果没有安装过 <code>nginx</code> 还是先安装 <code>nginx</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nginx -yq</span><br></pre></td></tr></table></figure>
+<p>关于 nginx 的配置会比 <code>uwsgi</code> 和 <code>gunicorn</code> 复杂点。<br>一个标准的 <code>nginx</code> 默认文件配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">worker_processes 1;</span><br><span class="line"></span><br><span class="line">#worker_cpu_affinity auto;</span><br><span class="line">worker_rlimit_nofile 65536;</span><br><span class="line">error_log /var/log/nginx/error.log warn;</span><br><span class="line">pid /var/run/nginx.pid;</span><br><span class="line">events &#123;</span><br><span class="line">worker_connections 65536;</span><br><span class="line">accept_mutex off;</span><br><span class="line">use epoll;</span><br><span class="line">&#125;</span><br><span class="line">http &#123;</span><br><span class="line">include /etc/nginx/mime.types;</span><br><span class="line">default_type application/octet-stream;</span><br><span class="line">log_format main &apos;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &apos;</span><br><span class="line">&apos;$status $body_bytes_sent &quot;$http_referer&quot; &apos;</span><br><span class="line">&apos;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&apos;;</span><br><span class="line">access_log /var/log/nginx/access.log main;</span><br><span class="line">keepalive_timeout 75 20;</span><br><span class="line">proxy_read_timeout 200;</span><br><span class="line">keepalive_requests 100000;</span><br><span class="line">client_header_timeout 10m;</span><br><span class="line">client_body_timeout 10m;</span><br><span class="line">client_max_body_size 20m;</span><br><span class="line">send_timeout 10m;</span><br><span class="line">sendfile on;</span><br><span class="line">tcp_nopush on;</span><br><span class="line">tcp_nodelay on;</span><br><span class="line">gzip on;</span><br><span class="line">gzip_min_length 1000;</span><br><span class="line">gzip_proxied any;</span><br><span class="line">gzip_disable &quot;MSIE [1-6]\.&quot;;</span><br><span class="line">gzip_types text/plain text/css</span><br><span class="line">application/x-javascript application/xml</span><br><span class="line">application/atom+xml text/javascript;</span><br><span class="line">upstream frontends &#123;</span><br><span class="line">server unix:/tmp/uwsgi.sock;</span><br><span class="line">server 127.0.0.1:8000;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">listen 80;</span><br><span class="line">server_name localhost;</span><br><span class="line">keepalive_timeout 5;</span><br><span class="line">location ^~ /static/ &#123;</span><br><span class="line">root /home/ubuntu/web_develop/static;</span><br><span class="line">&#125;</span><br><span class="line">location / &#123;</span><br><span class="line">uwsgi_pass frontends;</span><br><span class="line">include uwsgi_params;</span><br><span class="line">proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">proxy_set_header Host $host;</span><br><span class="line">proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">proxy_set_header X-Scheme $scheme;</span><br><span class="line">proxy_redirect off;</span><br><span class="line">&#125;</span><br><span class="line">location ~* \.(woff|eot|ttf|svg|mp4|webm|jpg|jpeg|png|gif|ico|css|js)$ &#123;</span><br><span class="line">expires 30d;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看出 <code>nginx</code> 的配置主要以块的形式组织的，每一个块由一个花括号表示。其中我们需要涉及的是主要块是 <code>http</code> 块，在它之下是 <code>server</code> 和 <code>upstream</code>。</p>
+<p>在 <code>upstream frontends</code> 中的 <code>server</code> 设置 <code>TCP/IP Socket</code> 和 <code>UNIX Socket</code>通信方式</p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2016-2018. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

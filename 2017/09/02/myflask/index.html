@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      flask 最佳实践 | ChenCheng&#39;s Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="ChenCheng">
+    
+    
+
+    <meta name="description" content="flask 最佳实践模板由  cookiecutter-flask 自动生成然后根据自己的需求加减功能。 构建工厂函数工厂函数是 flask 最佳实践很重要的一步，所有的设置和插件都可以从这里进行添加和管理。工厂函数的构建模式如下，创建工厂函数并且在内部实现一系列的注册函数。  注入配置文件； 注册插件； 注册蓝本； 注册错误处理；  这样构建工程函数很清晰，当需要添加和去掉相应功能或配置时对应工">
+<meta name="keywords" content="flask">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flask 最佳实践 | ChenCheng&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/2017/09/02/myflask/index.html">
+<meta property="og:site_name" content="ChenCheng&#39;s Blog">
+<meta property="og:description" content="flask 最佳实践模板由  cookiecutter-flask 自动生成然后根据自己的需求加减功能。 构建工厂函数工厂函数是 flask 最佳实践很重要的一步，所有的设置和插件都可以从这里进行添加和管理。工厂函数的构建模式如下，创建工厂函数并且在内部实现一系列的注册函数。  注入配置文件； 注册插件； 注册蓝本； 注册错误处理；  这样构建工程函数很清晰，当需要添加和去掉相应功能或配置时对应工">
+<meta property="og:updated_time" content="2018-01-28T07:53:57.153Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="flask 最佳实践 | ChenCheng&#39;s Blog">
+<meta name="twitter:description" content="flask 最佳实践模板由  cookiecutter-flask 自动生成然后根据自己的需求加减功能。 构建工厂函数工厂函数是 flask 最佳实践很重要的一步，所有的设置和插件都可以从这里进行添加和管理。工厂函数的构建模式如下，创建工厂函数并且在内部实现一系列的注册函数。  注入配置文件； 注册插件； 注册蓝本； 注册错误处理；  这样构建工程函数很清晰，当需要添加和去掉相应功能或配置时对应工">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">ChenCheng&#39;s Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          Teachnology only for better life
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/jamebluntcc" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">flask 最佳实践</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-09-02" class="post-meta__date date">2017-09-02</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/full-stack-python/">full stack python</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/flask/">flask</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>flask 最佳实践模板由  <a href="https://github.com/sloria/cookiecutter-flask" target="_blank" rel="noopener">cookiecutter-flask</a> 自动生成然后根据自己的需求加减功能。</p>
+<h3 id="构建工厂函数"><a href="#构建工厂函数" class="headerlink" title="构建工厂函数"></a>构建工厂函数</h3><p>工厂函数是 <code>flask</code> 最佳实践很重要的一步，所有的设置和插件都可以从这里进行添加和管理。<br>工厂函数的构建模式如下，创建工厂函数并且在内部实现一系列的注册函数。</p>
+<ul>
+<li>注入配置文件；</li>
+<li>注册插件；</li>
+<li>注册蓝本；</li>
+<li>注册错误处理；</li>
+</ul>
+<p>这样构建工程函数很清晰，当需要添加和去掉相应功能或配置时对应工厂函数里面的注册函数即可。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask <span class="comment">#导入Flask 构建程序实例</span></span><br><span class="line"><span class="keyword">from</span> .setting <span class="keyword">import</span> config <span class="comment">#导入config dict</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_app</span><span class="params">(CONFIG=<span class="string">'dev'</span>)</span>:</span></span><br><span class="line">	app = Flask(__name__)</span><br><span class="line">	app.config_from_object(config[CONFIG])</span><br><span class="line">	register_extensions(app)</span><br><span class="line">	register_blueprints(app)</span><br><span class="line">	register_errorhanders(app)</span><br><span class="line">	register_shellcontext(app)</span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">return</span> app</span><br></pre></td></tr></table></figure></p>
+<h4 id="应用配置管理"><a href="#应用配置管理" class="headerlink" title="应用配置管理"></a>应用配置管理</h4><p>对于 <code>flask</code> 应用的配置管理设计管理类来进行管理。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># in settings file</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseConfig</span><span class="params">(object)</span>:</span></span><br><span class="line">	SECRET_KEY = os.environ.get(<span class="string">'APP_SECRET'</span>, <span class="string">'hard to guess string'</span>)</span><br><span class="line">	APP_DIR = os.path.abspath(os.path.dirname(__file__))</span><br><span class="line">	PROJECT_ROOT = os.path.abspath(os.path.join(APP_DIR, os.pardir))</span><br><span class="line">	SQLALCHEMY_TRACK_MODIFICATIONS = <span class="keyword">False</span></span><br><span class="line">	<span class="comment"># WEBPACK_MANIFEST_PATH = 'webpack/manifest.json'</span></span><br><span class="line">	...</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DevConfig</span><span class="params">(BaseConfig)</span>:</span></span><br><span class="line">	ENV = <span class="string">'dev'</span></span><br><span class="line">	DEBUG = <span class="keyword">True</span></span><br><span class="line">	DB_NAME = <span class="string">'dev.db'</span></span><br><span class="line">	DB_PATH = os.path.join(BaseConfig.PROJECT_ROOT, DB_NAME)</span><br><span class="line">	SQLALCHEMY_DATABASE_URI = <span class="string">'sqlite:///&#123;0&#125;'</span>.format(DB_PATH)</span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProdConfig</span><span class="params">(BaseConfig)</span>:</span></span><br><span class="line">	ENV = <span class="string">'prod'</span></span><br><span class="line">	DEBUG = <span class="keyword">False</span></span><br><span class="line">	SQLALCHEMY_DATABASE_URI = <span class="string">'mysql://&#123;user&#125;:&#123;passwd&#125;@&#123;host&#125;/&#123;db&#125;?charset=utf8'</span>.format(</span><br><span class="line">	user=os.environ.get(<span class="string">'USER'</span>,<span class="string">'flask'</span>),</span><br><span class="line">	passwd=os.environ.get(<span class="string">'PASSWD'</span>,<span class="string">'flask'</span>),</span><br><span class="line">	host=<span class="string">'localhost'</span>,</span><br><span class="line">	db=os.environ.get(<span class="string">'DATABASE'</span>,<span class="string">'r'</span>)</span><br><span class="line">	)</span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestConfig</span><span class="params">(BaseConfig)</span>:</span></span><br><span class="line">	TESTING = <span class="keyword">True</span></span><br><span class="line">	DEBUG = <span class="keyword">True</span></span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line">config = &#123;<span class="string">'dev'</span>: DevConfig,</span><br><span class="line">		  <span class="string">'prod'</span>: ProdConfig,</span><br><span class="line">		  <span class="string">'test'</span>: TestConfig</span><br><span class="line">		  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>在 <code>settings.py</code> 中建立一个 <code>BaseConfig</code> 来保存基本的配置，然后再以此构建 <code>DevConfig</code>，<code>ProdConfig</code>,<code>TestConfig</code> 来作为作为开发，生产和测试的环境，最后建立一个 <code>config</code> 字典将全部配置连接起来。</p>
+<h4 id="注册函数"><a href="#注册函数" class="headerlink" title="注册函数"></a>注册函数</h4><p>在注册插件函数中，希望尽可能的添加少的同时又是很必要的插件来使得减少我们的工作量，<code>flask</code> 基本的插件形式如：flask_xxx，在注册函数中引入的插件如下，我简单的分为必要与不必要两类：</p>
+<ul>
+<li>必要<ul>
+<li><a href="http://flask-sqlalchemy.pocoo.org/" target="_blank" rel="noopener">flask_sqlalchemy</a>  实现<code>ORM</code> 由著名的 <a href="http://www.sqlalchemy.org/" target="_blank" rel="noopener">SQLAlchemy</a> 写的 <code>flask</code> 扩展插件。</li>
+<li><a href="https://flask-login.readthedocs.io/en/latest/" target="_blank" rel="noopener">flask_login</a> 实现管理用户登录与<code>session</code>。</li>
+<li><a href="https://flask-migrate.readthedocs.io/en/latest/" target="_blank" rel="noopener">flask_migrate</a> 实现数据库的自动迁移和更新。</li>
+</ul>
+</li>
+<li>不必要<ul>
+<li><a href="https://pypi.python.org/pypi/Flask-Webpack/0.0.7" target="_blank" rel="noopener">flask_webpack</a> 实现前端资源的打包。</li>
+<li><a href="http://flask-bcrypt.readthedocs.io/en/latest/" target="_blank" rel="noopener">flask_bcrypt</a> 实现用户密码的 <code>hash</code></li>
+</ul>
+</li>
+</ul>
+<p>注册函数如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># in app.py file</span></span><br><span class="line"><span class="keyword">from</span> extensions <span class="keyword">import</span> db, login_manager, migrate</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register_extensions</span><span class="params">(app)</span>:</span></span><br><span class="line">	db.init_app(app)</span><br><span class="line">	login_manager.init_app(app)</span><br><span class="line">	migrate.init_app(app)</span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"><span class="comment"># in extensions.py file</span></span><br><span class="line"><span class="keyword">from</span> flask_sqlalchemy <span class="keyword">import</span> SQLAlchemy</span><br><span class="line"><span class="keyword">from</span> flask_login <span class="keyword">import</span> LoginManager</span><br><span class="line"><span class="keyword">from</span> flask_migrate <span class="keyword">import</span> Migrate</span><br><span class="line">...</span><br><span class="line">migrate = Migrate()</span><br><span class="line">db = SQLAlchemy()</span><br><span class="line">login_manager = LoginManger()</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>新建 extensions.py 文件，在里面引入各个 <code>flask</code> 的插件，然后再建立各个插件的实例，最后 app.py 中的注册插件函数中通过各个实例的 <code>init_app()</code> 完成注册到工厂函数上的 <code>app</code>。</p>
+<h4 id="注册蓝本"><a href="#注册蓝本" class="headerlink" title="注册蓝本"></a>注册蓝本</h4><p>蓝本将 <code>flask</code> 应用按照功能进行划分。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在单个功能文件的 views 里导入蓝本</span></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Blueprint</span><br><span class="line">blueprint = BluePrint(<span class="string">'public'</span>, __name__, static_folder = <span class="string">'../static'</span>)</span><br><span class="line">blueprint.route()</span><br><span class="line"><span class="comment"># in app.py file</span></span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> public</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">regiser_blueprint</span><span class="params">(app)</span>:</span></span><br><span class="line">	app.regiser_blueprint(public.views.blueprint)</span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">None</span></span><br></pre></td></tr></table></figure></p>
+<p><code>flask</code> 的 <code>Blueprint</code> 函数第一个参数接受一个字符串当做蓝本的名字，第二个参数是蓝本所在的文件一般是 <code>__name__</code>，最后 <code>static_folder</code> 配置了当前蓝本的静态文件目录。所有当前 <code>views.py</code> 下的路由都必须以 blueprint 开头：<code>@blueprint.route</code>，然后在功能文件的 <code>__init__.py</code> 中要<strong>导出 views</strong>否则会出现 <code>AttributeError: &#39;module&#39; object has no attribute &#39;views&#39;</code>，<code>from . import views</code>。最后在工厂函数中进行蓝本的注册。</p>
+<h4 id="注册错误处理函数"><a href="#注册错误处理函数" class="headerlink" title="注册错误处理函数"></a>注册错误处理函数</h4><p>错误处理函数是 <code>flask</code> 应用中当出现 <code>404</code>，<code>500</code> 等错误的时候应对这些错误的功能函数。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> render_template</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register_errorhanders</span><span class="params">(app)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">render_error</span><span class="params">(error)</span>:</span></span><br><span class="line">		error_code = getattr(error, <span class="string">'code'</span>, <span class="number">500</span>)</span><br><span class="line">		<span class="keyword">return</span> render_template(<span class="string">'&#123;0&#125;.html'</span>.format(error_code))</span><br><span class="line">	<span class="keyword">for</span> errcode <span class="keyword">in</span> [<span class="number">401</span>, <span class="number">404</span>, <span class="number">500</span>]:</span><br><span class="line">		app.errorhander(errcode)(render_error)</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">None</span></span><br></pre></td></tr></table></figure></p>
+<p>在注册错误处理函数中先预设了一个 <code>render_error</code> 函数去渲染页面，在下面的代码中 <code>app.errorhander</code> 其实是是一个装饰器，接受一个错误代码，然后装饰 <code>render_error</code>。</p>
+<h3 id="功能组件"><a href="#功能组件" class="headerlink" title="功能组件"></a>功能组件</h3><p><code>flask</code> 中我们可以按照功能将一个大型功能复杂的应用分为各个单一的组件模块，在每一个组件里会有以下几个文件：</p>
+<ul>
+<li><code>views.py</code> 功能组件的视图函数文件。</li>
+<li><code>forms.py</code> 表单文件。</li>
+<li><code>__init__.py</code> 在引用模块组件时将 view 导入。</li>
+</ul>
+<h4 id="视图函数文件"><a href="#视图函数文件" class="headerlink" title="视图函数文件"></a>视图函数文件</h4><p>在 <code>views</code> 中的内容就是 python web 开发模式 <code>MTV</code> 中的 <code>V</code> ，处理用户在网页上的表单和交互等，然后连接数据库做出相应的响应，将数据返回并重新加载或者渲染页面，以下代码我们假定是处于 <code>public</code> 模块组件下。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Blueprint, render_template, flash ...</span><br><span class="line"><span class="keyword">from</span> flask_login <span class="keyword">import</span> login_required, login_user, logout_user</span><br><span class="line"><span class="keyword">from</span> app.utils <span class="keyword">import</span> flash_errors</span><br><span class="line"><span class="keyword">from</span> app.public.forms <span class="keyword">import</span> LoginForm</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">blueprint = Blueprint(<span class="string">'public'</span>, __name__ , static_folder=<span class="string">'../static'</span>)</span><br><span class="line"></span><br><span class="line">blueprint.route(<span class="string">'/'</span>, methods=[<span class="string">'GET'</span>, <span class="string">'POST'</span>])</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">home</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="string">"""Home page."""</span></span><br><span class="line">	form = LoginForm(request.form)</span><br><span class="line">	<span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">		<span class="keyword">if</span> form.validate_on_submit():</span><br><span class="line">			login_user(form.user)</span><br><span class="line">			flash(<span class="string">'you are loggin in.'</span>, <span class="string">'success'</span>)</span><br><span class="line">			redirect_url = request.args.get(<span class="string">'next'</span>) <span class="keyword">or</span> url_for(<span class="string">'user.members'</span>)</span><br><span class="line">			<span class="keyword">return</span> redirect(redirect_url)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			flash_errors(form)</span><br><span class="line">	<span class="keyword">return</span> render_template(<span class="string">'public/home.html'</span>, form=form)</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>因为使用了 <code>flask_login</code>, <code>flask_wtf</code> 等插件大大减少了代码量，<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># in __init__.py file</span></span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line"><span class="comment"># in forms file</span></span><br><span class="line"><span class="keyword">from</span> flask_wtf <span class="keyword">import</span> FlaskForm</span><br><span class="line"><span class="keyword">from</span> wtforms <span class="keyword">import</span> StringField, PasswordField ...</span><br><span class="line"><span class="keyword">from</span> wtforms</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>即使是单功能的项目也要实现 blueprint.</p>
+</blockquote>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2016-2018. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
